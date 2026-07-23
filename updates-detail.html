@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>资讯活动详情 | 马来西亚华文作家协会</title>
+  <meta name="description" content="资讯与活动报道详情弹窗 demo。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./site.css">
+</head>
+<body class="detail-page">
+<header class="site-header" id="top">
+    <a class="brand" href="index.html#home" aria-label="回到首页">
+      <img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo">
+      <span>马来西亚华文作家协会<small>Malaysia Chinese Writers Association</small></span>
+    </a>
+    <nav class="main-nav" aria-label="主要导航">
+      <a href="index.html#library">图书馆</a>
+      <a href="index.html#bookshop">书</a>
+      <a href="index.html#writers">写书人</a>
+      <a href="index.html#updates">资讯与活动</a>
+      <a href="course.html">课程</a>
+      <a href="index.html#about">关于作协</a>
+      <a href="award.html">文学奖</a>
+      <a href="contact.html">联系我们</a>
+    </nav>
+    <label class="nav-search">
+      <span>搜索</span>
+      <input type="search" placeholder="请输入书名或作者名">
+    </label>
+    <button class="google-login" type="button">Google 登录</button>
+  </header>
+<main class="simple-page">
+    <section class="page-card">
+      <p class="eyebrow">Article Viewer</p>
+      <h1>资讯活动详情</h1>
+      <p class="profile-intro">此页模拟正式网站的文章页：从首页卡片打开新标签后，系统会自动弹出完整内容。关闭弹窗后，用户仍可返回资讯活动列表。</p>
+      <button class="button dark js-open-modal" type="button" data-kind="news" data-title="资讯活动详情" data-date="2026" data-gallery="4" data-cover="event-media" data-body="这是详情页的备用弹窗内容。||若用户直接打开本页，没有从首页卡片带入资料，就会显示这份示范内容。">再次打开弹窗</button>
+    </section>
+  </main>
+<footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo">
+        <div>
+          <h2>马来西亚华文作家协会</h2>
+          <p>书写马华文学 · 保存时代回声</p>
+        </div>
+      </div>
+      <div class="footer-columns">
+        <section class="footer-col">
+          <h3>资源</h3>
+          <nav>
+            <a href="index.html#library">电子图书馆</a>
+            <a href="index.html#bookshop">购书</a>
+            <a href="news.html">最新资讯</a>
+            <a href="events.html">活动报导</a>
+            <a href="award.html">文学奖</a>
+            <a href="course.html">课程</a>
+          </nav>
+        </section>
+        <section class="footer-col">
+          <h3>协会</h3>
+          <nav>
+            <a href="index.html#about">关于作协</a>
+            <a href="writer-zone.html">写书人专区</a>
+            <a href="contact.html">联系我们</a>
+          </nav>
+        </section>
+        <section class="footer-col">
+          <h3>联系</h3>
+          <div class="footer-contact">
+            <span>mychinesewriters@gmail.com</span>
+            <span>MPAJ Square, Lot 1009 MNR A, PSN MPAJ, Pandan Indah, Jalan Pandan Utama, 55100 Kuala Lumpur, Malaysia.</span>
+          </div>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Malaysia Chinese Writers Association · Designed &amp; Developed by Tina</span>
+        <span class="footer-legal"><a href="#">用户协议</a><a href="#">隐私政策</a></span>
+      </div>
+    </div>
+  </footer>
+  <dialog class="content-modal" id="content-modal">
+    <button class="modal-close" type="button" aria-label="关闭弹窗">×</button>
+    <p class="eyebrow modal-kind">News</p>
+    <h2 class="modal-title"></h2>
+    <p class="modal-date"></p>
+    <div class="modal-article"></div>
+  </dialog>
+  <script src="./site.js"></script>
+</body>
+</html>

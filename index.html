@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>马来西亚华文作家协会</title>
+  <meta name="description" content="马来西亚华文作家协会新版网站 demo。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./site.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="回到首页">
+      <img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo">
+      <span>马来西亚华文作家协会<small>Malaysia Chinese Writers Association</small></span>
+    </a>
+    <nav class="main-nav" aria-label="主要导航">
+      <a href="#library">图书馆</a>
+      <a href="#bookshop">书</a>
+      <a href="#writers">写书人</a>
+      <a href="#updates">资讯与活动</a>
+      <a href="course.html">课程</a>
+      <a href="#about">关于作协</a>
+      <a href="award.html">文学奖</a>
+      <a href="contact.html">联系我们</a>
+    </nav>
+    <label class="nav-search">
+      <span>搜索</span>
+      <input type="search" placeholder="请输入书名或作者名">
+    </label>
+    <button class="google-login" type="button">Google 登录</button>
+  </header>
+
+  <main>
+    <section class="hero-section snap-section home-hero" id="home">
+      <div class="hero-dust" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Malaysia Chinese Writers Association</p>
+        <h1>马华文化<br>在此生长</h1>
+        <p>从书籍、写书人、活动现场到每日动态，这里是一座慢慢展开的马华文化档案馆。</p>
+        <div class="hero-actions">
+          <a class="button metal" href="#library">开始探索</a>
+          <a class="button museum-outline" href="library.html">进入电子图书馆</a>
+        </div>
+      </div>
+      <div class="hua-stage" aria-label="由繁体華字偏旁部首拼合的数字展馆动画">
+        <div class="hud-lines" aria-hidden="true"></div>
+        <button class="hua-glyph" type="button" aria-label="重新拼合繁体華字">
+          <span class="hua-piece p1">華</span>
+          <span class="hua-piece p2">華</span>
+          <span class="hua-piece p3">華</span>
+          <span class="hua-piece p4">華</span>
+          <span class="hua-piece p5">華</span>
+          <span class="hua-piece p6">華</span>
+          <span class="hua-piece p7">華</span>
+          <span class="hua-piece p8">華</span>
+          <span class="hua-piece p9">華</span>
+        </button>
+        <p class="hero-vertical">口述历史、典藏记忆<br>连接过去，启迪未来</p>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">
+        <span></span>
+        <p>向下滑动 探索更多</p>
+        <b></b>
+      </div>
+    </section>
+
+    <section class="snap-section library-showcase" id="library">
+      <div class="library-panel">
+        <p class="section-kicker">Digital Library</p>
+        <div class="library-title-row">
+          <h2>马华文学电子图书馆</h2>
+          <div class="library-meta">
+            <p>书影、作者、文类和阅读入口集中展示。</p>
+            <a class="button gold library-more" href="library.html">更多书籍，请跟我来图书馆</a>
+          </div>
+        </div>
+        <div class="museum-books" aria-label="马华文学电子图书馆书籍展示">
+          <a class="display-book" href="read-book.html" data-title="《众生的神》" data-desc="温任平诗集，天狼星出版社。"><img src="images/cover-zhongshengdeshen.jpg" alt="众生的神封面"></a>
+          <a class="display-book" href="read-book.html" data-title="《教科书上的马华文学》" data-desc="文学鉴赏读本，连接课程与购买入口。"><img src="images/cover-textbook.jpg" alt="教科书上的马华文学封面"></a>
+          <a class="display-book" href="read-book.html" data-title="《复始之地·乡土篇》" data-desc="马华文学系列乡土篇。"><img src="images/cover-fushi.jpg" alt="复始之地乡土篇封面"></a>
+          <a class="display-book" href="read-book.html" data-title="《无弦琴》" data-desc="温任平诗集，骆驼出版社。"><img src="images/cover-wuxianqin.jpg" alt="无弦琴封面"></a>
+          <a class="display-book" href="read-book.html" data-title="《阳光普照》" data-desc="姚鱼短篇小说与诗歌合集。"><img src="images/cover-yangguangpuzhao.jpg" alt="阳光普照封面"></a>
+        </div>
+        <div class="book-spotlight" id="book-detail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="snap-section bookshop-section" id="bookshop">
+      <div class="section-head compact-head">
+        <div><p class="eyebrow">Bookshop</p><h2>书店</h2></div>
+        <label class="section-search"><span>找书</span><input class="js-book-search" type="search" placeholder="请输入书名或作者名"></label>
+      </div>
+      <div class="book-row">
+        <article class="book-card" data-book data-title="《华文教科书上的马华文学（国中篇）》" data-price="40" data-search="教科书上的马华文学 伍燕翎 文学鉴赏"><span>最新上架</span><img src="images/cover-textbook.jpg" alt="教科书上的马华文学封面"><h3>《华文教科书上的马华文学（国中篇）》</h3><p>文学鉴赏读本，可连接课程与阅读页。</p><strong>RM40</strong><button class="add-book" type="button">加入购物车</button></article>
+        <article class="book-card" data-book data-title="《南洋文艺丛书》" data-price="36" data-search="南洋文艺丛书 档案"><span>最新上架</span><img src="images/cover-nanyang-archive.jpg" alt="南洋文艺档案封面"><h3>《南洋文艺丛书》</h3><p>旧刊资料与文学史入口。</p><strong>RM36</strong><button class="add-book" type="button">加入购物车</button></article>
+        <article class="book-card" data-book data-title="《深耕文学创作课程作品》" data-price="30" data-search="深耕文学创作课程 课程作品"><span>最新上架</span><img src="images/cover-course-archive.jpg" alt="深耕文学课程作品封面"><h3>《深耕文学创作课程作品》</h3><p>导师、学员与课程作品集。</p><strong>RM30</strong><button class="add-book" type="button">加入购物车</button></article>
+        <article class="book-card hot" data-book data-title="《复始之地·乡土篇》" data-price="45" data-search="复始之地 乡土篇 热卖"><span>热卖</span><img src="images/cover-fushi.jpg" alt="复始之地乡土篇封面"><h3>《复始之地·乡土篇》</h3><p>马华乡土文学专题。</p><strong>RM45</strong><button class="add-book" type="button">加入购物车</button></article>
+      </div>
+      <button class="cart-float" type="button" aria-label="打开购书清单"><img src="images/icon-cart-white.png" alt=""><b>0</b></button>
+    </section>
+
+    <section class="snap-section writers-section" id="writers">
+      <div class="section-head compact-head">
+        <div><p class="eyebrow">Writers</p><h2>写书人</h2></div>
+        <div class="writer-tools">
+          <a class="button museum-outline writer-zone-entry" href="writer-zone.html">写书人专区</a>
+          <label class="section-search"><span>找作者</span><input class="js-writer-search" type="search" placeholder="请输入书名或作者名"></label>
+        </div>
+      </div>
+      <div class="writer-carousel">
+        <button class="writer-nav writer-prev" type="button" aria-label="上一组写书人">←</button>
+        <div class="writer-wall" tabindex="0" aria-label="写书人滑动列表">
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=pan-bihua" target="_blank" rel="noopener" data-writer-search="潘碧华 散文 学术 传火人" data-batch="0"><img src="images/writer-pan-bihua.jpg" alt="潘碧华照片"><span>散文 / 学术</span><h3>潘碧华</h3><p>代表作：《传火人》</p></a>
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=dai-xiaohua" target="_blank" rel="noopener" data-writer-search="戴小华 童诗 文化教育" data-batch="0"><img src="images/writer-dai-xiaohua.jpg" alt="戴小华照片"><span>童诗 / 文化教育</span><h3>戴小华</h3><p>童诗活动推广</p></a>
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=youjin" target="_blank" rel="noopener" data-writer-search="尤今 小说 散文 旅行文学" data-batch="0"><img src="images/writer-youjin.webp" alt="尤今照片"><span>小说 / 散文</span><h3>尤今</h3><p>旅行文学与小品文</p></a>
+        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=liu-yulong" target="_blank" rel="noopener" data-writer-search="刘育龙 童诗 导盲犬 新诗"><b>刘</b><span>诗歌 / 童诗</span><h3>刘育龙</h3><p>新诗与童诗活动</p></a>
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=wu-yanling" target="_blank" rel="noopener" data-writer-search="伍燕翎 评论 教材 马华文学" data-batch="0"><img src="images/writer-wu-yanling.png" alt="伍燕翎照片"><span>评论 / 教材</span><h3>伍燕翎</h3><p>主编：《华文教科书上的马华文学》</p></a>
+        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=bicheng" target="_blank" rel="noopener" data-writer-search="碧澄 短篇小说" data-batch="1"><b>碧</b><span>短篇小说</span><h3>碧澄</h3><p>资料待补全</p></a>
+        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=qinlin" target="_blank" rel="noopener" data-writer-search="秦林 现代诗" data-batch="1"><b>秦</b><span>现代诗</span><h3>秦林</h3><p>资料待补全</p></a>
+        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=young" target="_blank" rel="noopener" data-writer-search="青年作者 文学奖" data-batch="1"><b>青</b><span>文学奖</span><h3>青年作者</h3><p>海鸥青年文学奖作品</p></a>
+        </div>
+        <button class="writer-nav writer-next" type="button" aria-label="下一组写书人">→</button>
+      </div>
+    </section>
+
+    <section class="snap-section facebook-section" id="facebook">
+      <div class="section-head">
+        <p class="eyebrow">Facebook Feed</p>
+        <h2>面子书动态</h2>
+        <p>横向滑动支持鼠标、触控板和手机手势。未来接入每日贴文后，只展示确认发布的最新内容。</p>
+      </div>
+      <div class="fb-strip" aria-label="面子书贴文示例">
+        <article class="fb-post"><div class="fb-author"><img src="images/zuoxie-logo-cutout.png" alt=""><div><b>马来西亚华文作家协会</b><span>11 分钟前</span></div></div><p>“今晚童诗约 3270 期”《导盲犬》刘育龙，童诗获选 2026 华文童诗选。</p><div class="fb-media book-media"></div><footer>赞 · 留言 · 分享</footer></article>
+        <article class="fb-post"><div class="fb-author"><img src="images/zuoxie-logo-cutout.png" alt=""><div><b>马来西亚华文作家协会</b><span>1 小时前</span></div></div><p>新书分享会预告：作家与读者在周末下午相聚，一起谈乡土书写。</p><div class="fb-media event-media"></div><footer>赞 · 留言 · 分享</footer></article>
+        <article class="fb-post"><div class="fb-author"><img src="images/zuoxie-logo-cutout.png" alt=""><div><b>马来西亚华文作家协会</b><span>昨天</span></div></div><p>深耕文学创作课程简章开放报名，小说、诗歌、散文三组同步招生。</p><div class="fb-media course-media"></div><footer>赞 · 留言 · 分享</footer></article>
+        <article class="fb-post more-post"><div class="fb-author"><img src="images/zuoxie-logo-cutout.png" alt=""><div><b>更多每日动态</b><span>Facebook</span></div></div><p>想了解更多，请点击这里前往作协 Facebook 页面。</p><a class="button dark" href="https://www.facebook.com/people/%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E8%8F%AF%E6%96%87%E4%BD%9C%E5%AE%B6%E5%8D%94%E6%9C%83%E8%8F%AF%E6%96%87%E4%BD%9C%E5%8D%94/100066713756309/?ref=embed_page" target="_blank" rel="noopener">打开 Facebook</a></article>
+      </div>
+    </section>
+
+    <section class="snap-section updates-section" id="updates">
+      <div class="updates-grid">
+        <div>
+          <div class="updates-head"><h2>最新资讯</h2><a href="news.html">更多</a></div>
+          <button class="update-item js-open-modal" type="button" data-new-tab="true" data-kind="news" data-title="本月焦点：新书出版与预购" data-date="2026.08" data-gallery="6" data-cover="book-media" data-body="新版资讯弹窗会承载完整文章、照片组、活动链接和购书入口。||后台未来上传 1 至 10 张图片时，页面会按段落节奏穿插图片。||若只有一张图，它会作为文章封面大图；若有多张图，则每两段文字后自然插入两张。"><div class="update-thumb book-media"></div><span>2026.08</span><b>本月焦点：新书出版与预购</b></button>
+          <button class="update-item js-open-modal" type="button" data-new-tab="true" data-kind="news" data-title="海鸥青年文学奖征稿消息" data-date="2026.06" data-gallery="2" data-cover="award-media" data-body="奖项资讯可连接文学奖页面，弹窗中保留征稿办法、日期和奖项说明。||未来也可以把得奖名单、评审语与作品阅读页串起来。"><div class="update-thumb award-media"></div><span>2026.06</span><b>海鸥青年文学奖征稿消息</b></button>
+          <button class="update-item js-open-modal" type="button" data-new-tab="true" data-kind="news" data-title="深耕文学课程报名开始" data-date="2026.07" data-gallery="3" data-cover="course-media" data-body="报名资讯、课程宗旨、导师介绍与报名方式集中呈现。||这样列表页保持安静，完整内容则在弹窗里阅读。"><div class="update-thumb course-media"></div><span>2026.07</span><b>深耕文学课程报名开始</b></button>
+        </div>
+        <div>
+          <div class="updates-head"><h2>活动报导</h2><a href="events.html">更多</a></div>
+          <button class="update-item js-open-modal" type="button" data-new-tab="true" data-kind="event" data-title="新书推介与作家分享会" data-date="2026.07" data-gallery="8" data-cover="event-media" data-body="活动报道弹窗适合放现场照片、主持人记录、作家引言和相关书籍。||读者点击卡片后，可以在一个完整阅读空间里看完报道。||若活动照片很多，系统会自动让图片穿插在段落之间。"><div class="update-thumb event-media"></div><span>2026.07</span><b>新书推介与作家分享会</b></button>
+          <button class="update-item js-open-modal" type="button" data-new-tab="true" data-kind="event" data-title="文学讲座活动报导" data-date="2026.06" data-gallery="5" data-cover="talk-media" data-body="讲座报道可以显示讲者、主题、现场提问与延伸阅读。||未来可连接写书人档案与电子图书馆书籍。"><div class="update-thumb talk-media"></div><span>2026.06</span><b>文学讲座活动报导</b></button>
+          <button class="update-item js-open-modal" type="button" data-new-tab="true" data-kind="event" data-title="课程结业分享" data-date="2026.05" data-gallery="4" data-cover="course-media" data-body="课程结业可连接学员作品、导师评语和下一期报名入口。||这个排版适合以后后台更新长文与照片。"><div class="update-thumb course-media"></div><span>2026.05</span><b>课程结业分享</b></button>
+        </div>
+      </div>
+    </section>
+    <section class="snap-section about-council-section" id="about">
+      <div class="about-council-grid">
+        <div class="about-panel">
+          <div class="about-photo-strip single-photo" aria-label="作协大合照展示">
+            <span></span>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">About Association</p>
+            <h2>关于作协</h2>
+            <p>马来西亚华文作家协会保存写作现场、推动出版交流，也让马华文学的记忆持续被看见。</p>
+            <p>新版网站把资讯、活动、写书人、图书馆与购书入口整合成可长期维护的文学档案馆。这里可以放协会大合照、会史简介、会员活动和未来想长期保存的公共文化资料。</p>
+          </div>
+          <aside class="sponsor-note">
+            <span>Special Thanks</span>
+            <h3>特别鸣谢</h3>
+            <p>赞助商与合作单位可在这里以克制但隆重的方式展示，不影响读者阅读主要内容。</p>
+            <div><b>赞助单位 A</b><b>文化伙伴 B</b><b>出版支持 C</b></div>
+          </aside>
+        </div>
+        <div class="council-panel">
+          <p class="eyebrow">Council</p>
+          <h2>作协理事会</h2>
+          <p>第 19 届（2019-2022）理事会成员资料先集中展示，未来可继续扩充历届理事会档案。</p>
+          <div class="council-list">
+            <p><b>会长</b>潘碧华</p>
+            <p><b>副会长</b>李忆莙、柯金德、年红、胡清朝</p>
+            <p><b>秘书长</b>冯宛庭</p>
+            <p><b>副秘书长</b>伍燕翎、林玉蓉</p>
+            <p><b>财政</b>周锦聪</p>
+            <p><b>副财政</b>黄建华</p>
+            <p><b>出版及发行组主任</b>蔡晓玲</p>
+            <p><b>联络组主任</b>刘淑英</p>
+            <p><b>译介组主任</b>廖冰凌</p>
+            <p><b>资料组主任</b>李宣春</p>
+            <p><b>理事</b>吕育凤、刘育龙、舒颖、林建文、林杨凤</p>
+          </div>
+          <div class="state-committee-list">
+            <h3>各州联委会主席</h3>
+            <p><b>东海岸三州联委会</b>陈雯爱</p>
+            <p><b>槟吉玻三州联委会</b>罗秋雁</p>
+            <p><b>沙巴州联委会</b>冯学良</p>
+            <p><b>砂拉越州联委会</b>晨露</p>
+            <p><b>吡叻州联委会</b>王涛</p>
+            <p><b>柔佛州联委会</b>暂无</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo">
+        <div>
+          <h2>马来西亚华文作家协会</h2>
+          <p>书写马华文学 · 保存时代回声</p>
+        </div>
+      </div>
+      <div class="footer-columns">
+        <section class="footer-col">
+          <h3>资源</h3>
+          <nav>
+            <a href="#library">电子图书馆</a>
+            <a href="#bookshop">购书</a>
+            <a href="news.html">最新资讯</a>
+            <a href="events.html">活动报导</a>
+            <a href="award.html">文学奖</a>
+            <a href="course.html">课程</a>
+          </nav>
+        </section>
+        <section class="footer-col">
+          <h3>协会</h3>
+          <nav>
+            <a href="#about">关于作协</a>
+            <a href="writer-zone.html">写书人专区</a>
+            <a href="contact.html">联系我们</a>
+          </nav>
+        </section>
+        <section class="footer-col">
+          <h3>联系</h3>
+          <div class="footer-contact">
+            <span>mychinesewriters@gmail.com</span>
+            <span>MPAJ Square, Lot 1009 MNR A, PSN MPAJ, Pandan Indah, Jalan Pandan Utama, 55100 Kuala Lumpur, Malaysia.</span>
+          </div>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Malaysia Chinese Writers Association · Designed &amp; Developed by Tina</span>
+        <span class="footer-legal"><a href="#">用户协议</a><a href="#">隐私政策</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="content-modal" id="content-modal">
+    <button class="modal-close" type="button" aria-label="关闭弹窗">×</button>
+    <p class="eyebrow modal-kind">News</p>
+    <h2 class="modal-title"></h2>
+    <p class="modal-date"></p>
+    <div class="modal-article"></div>
+  </dialog>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="./site.js"></script>
+</body>
+</html>
