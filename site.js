@@ -1,10 +1,41 @@
-const homeHero = document.querySelector(".home-hero");
+﻿const homeHero = document.querySelector(".home-hero");
 const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
 const sections = [...document.querySelectorAll("main section[id]")];
 const huaCubeField = document.querySelector(".hua-cube-field");
 const huaGlyph = document.querySelector(".hua-glyph");
 const heroDust = document.querySelector(".hero-dust");
 let huaAnimationTimer;
+
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+  const mobileNavToggle = document.createElement("button");
+  mobileNavToggle.className = "mobile-nav-toggle";
+  mobileNavToggle.type = "button";
+  mobileNavToggle.setAttribute("aria-label", "打开导航菜单");
+  mobileNavToggle.setAttribute("aria-expanded", "false");
+  mobileNavToggle.innerHTML = "<span></span><span></span><span></span>";
+  siteHeader.querySelector(".brand")?.after(mobileNavToggle);
+
+  const closeMobileNav = () => {
+    siteHeader.classList.remove("is-menu-open");
+    mobileNavToggle.setAttribute("aria-expanded", "false");
+    mobileNavToggle.setAttribute("aria-label", "打开导航菜单");
+  };
+
+  mobileNavToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("is-menu-open");
+    mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+    mobileNavToggle.setAttribute("aria-label", isOpen ? "关闭导航菜单" : "打开导航菜单");
+  });
+
+  siteHeader.querySelectorAll(".main-nav a, .google-login").forEach((link) => {
+    link.addEventListener("click", closeMobileNav);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMobileNav();
+  });
+}
 
 const huaGridSize = 29;
 
@@ -416,28 +447,26 @@ if (cartButton) {
   cartHost.appendChild(cartPanel);
 
   function buildFormUrl() {
-    const summary = cartItems.map((item) => `${item.title} x${item.qty} RM${item.price * item.qty}`).join("\n");
-    const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const summary = cartItems.map((item) => `${item.title} x${item.qty} RM xx`).join("\n");
     const url = new URL(GOOGLE_FORM_BASE);
     url.searchParams.set("usp", "pp_url");
     url.searchParams.set(FORM_ENTRY_BOOKS, summary || "尚未选择书籍");
-    url.searchParams.set(FORM_ENTRY_TOTAL, `RM${total}`);
+    url.searchParams.set(FORM_ENTRY_TOTAL, "RM xx");
     return url.toString();
   }
 
   function renderCart() {
-    const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
     const count = cartItems.reduce((sum, item) => sum + item.qty, 0);
     if (cartCount) cartCount.textContent = count;
     cartPanel.innerHTML = `
       <h3>购物清单</h3>
-      <p>点击书本加入清单，网页先计算金额，再把书名和总额预填到 Google Form。</p>
+      <p>点击书本加入清单；现阶段先保留书名与数量，价格将在订单确认时提供。</p>
       <ul class="cart-list">
         ${cartItems.length ? cartItems.map((item, index) => `
-          <li><span>${item.title}<br><small>RM${item.price} x ${item.qty}</small></span><strong>RM${item.price * item.qty}</strong><button type="button" data-remove="${index}" aria-label="移除">-</button></li>
-        `).join("") : "<li><span>还没有选择书籍</span><strong>RM0</strong></li>"}
+          <li><span>${item.title}<br><small>RM xx × ${item.qty}</small></span><strong>RM xx</strong><button type="button" data-remove="${index}" aria-label="移除">-</button></li>
+        `).join("") : "<li><span>还没有选择书籍</span><strong>—</strong></li>"}
       </ul>
-      <div class="cart-total"><span>总额</span><b>RM${total}</b></div>
+      <div class="cart-total"><span>总额</span><b>RM xx</b></div>
       <a class="button dark" href="${buildFormUrl()}" target="_blank" rel="noopener">前往购书入口</a>
     `;
   }
@@ -447,10 +476,9 @@ if (cartButton) {
       const card = button.closest("[data-book]");
       if (!card) return;
       const title = card.dataset.title || card.querySelector("h3")?.textContent || "未命名书籍";
-      const price = Number(card.dataset.price || 0);
       const existing = cartItems.find((item) => item.title === title);
       if (existing) existing.qty += 1;
-      else cartItems.push({ title, price, qty: 1 });
+      else cartItems.push({ title, qty: 1 });
       renderCart();
       cartPanel.classList.add("is-open");
     });
@@ -625,9 +653,9 @@ const writerProfiles = {
     intro: "潘碧华，1965 年生于马来西亚吉打州，马来亚大学中文系毕业，马大文学硕士，北京大学古代文学博士。曾任马来亚大学中文系副教授兼主任，并曾任马来西亚华文作家协会会长。研究领域包括中国古代诗词、马来西亚华文文学与华人文化；著有散文集《传火人》《我会在长城上想起你》《在北大看中国》等，也参与主编多种马华文学评论与作家研究书系。",
     source: "资料参考：大将文化作者页、马来亚大学中文系资料、作协理事会页面。",
     works: [
-      ["《传火人》", "散文集 / 马华文学写作与文化记忆", "images/cover-course-archive.jpg"],
-      ["《马华文学的时代记忆》", "学术专著 / 马华文学研究", "images/cover-nanyang-archive.jpg"],
-      ["《马华作家评论100家》", "主编 / 作家评论资料", "images/cover-textbook.jpg"]
+      ["《传火人》", "散文集 / 马华文学写作与文化记忆", "images/placeholder-cover.png"],
+      ["《马华文学的时代记忆》", "学术专著 / 马华文学研究", "images/placeholder-cover.png"],
+      ["《马华作家评论100家》", "主编 / 作家评论资料", "images/placeholder-cover.png"]
     ]
   },
   "dai-xiaohua": {
@@ -637,9 +665,9 @@ const writerProfiles = {
     intro: "戴小华在这个 demo 中先作为童诗与儿童文学活动相关的写书人档案展示。正式资料库上线时，可以补入完整出生地、履历、出版书目、活动照片、获奖记录，以及与作协童诗活动、文学教育活动的关联。",
     source: "资料状态：公开资料不足，建议后续由作协后台补全正式作者履历。",
     works: [
-      ["童诗创作活动", "关联：童诗、儿童文学教育", "images/cover-course-archive.jpg"],
-      ["作协活动记录", "关联：Facebook 动态与活动报道", "images/cover-nanyang-archive.jpg"],
-      ["作者档案待补", "后台可继续添加代表作与照片", "images/cover-textbook.jpg"]
+      ["童诗创作活动", "关联：童诗、儿童文学教育", "images/placeholder-cover.png"],
+      ["作协活动记录", "关联：Facebook 动态与活动报道", "images/placeholder-cover.png"],
+      ["作者档案待补", "后台可继续添加代表作与照片", "images/placeholder-cover.png"]
     ]
   },
   "youjin": {
@@ -649,21 +677,21 @@ const writerProfiles = {
     intro: "尤今出生于马来西亚怡保，后迁居新加坡。她的写作涵盖短篇小说、长篇小说、游记与散文，作品以温暖、细腻、可读性强见称。公开资料显示，她长期为报刊写作，作品数量丰富，并曾获新加坡文化奖等重要荣誉。",
     source: "资料参考：尤今个人网站、香港作家联会作者简介、中国作家网相关访谈。",
     works: [
-      ["旅行文学作品", "文类：游记 / 散文", "images/cover-nanyang-archive.jpg"],
-      ["小说与小品文", "文类：小说 / 小品", "images/cover-course-archive.jpg"],
-      ["教材选文", "关联：学校读本与文学教育", "images/cover-textbook.jpg"]
+      ["旅行文学作品", "文类：游记 / 散文", "images/placeholder-cover.png"],
+      ["小说与小品文", "文类：小说 / 小品", "images/placeholder-cover.png"],
+      ["教材选文", "关联：学校读本与文学教育", "images/placeholder-cover.png"]
     ]
   },
   "liu-yulong": {
     name: "刘育龙",
-    photo: "images/zuoxie-logo-cutout.png",
+    photo: "images/placeholder-writer.png",
     tags: ["诗歌", "童诗", "理事", "活动档案"],
-    intro: "刘育龙为马来西亚华文作家协会第 19 届理事会成员之一。此 demo 先以诗歌、童诗与活动档案作为资料切入点，后续可由后台补入完整作者照片、履历、作品列表和《导盲犬》等作品关联。",
-    source: "资料参考：作协第 19 届理事会页面；作品关联待作协后台补全。",
+    intro: "刘育龙现任马来西亚华文作家协会第21届（2025-2028年）理事会秘书长。此 demo 先以诗歌、童诗与活动档案作为资料切入点，后续可由后台补入完整作者照片、履历、作品列表和《导盲犬》等作品关联。",
+    source: "资料参考：作协第21届理事会资料；作品关联待作协后台补全。",
     works: [
-      ["《导盲犬》", "文类：童诗 / 诗歌，资料待核实补全", "images/cover-course-archive.jpg"],
-      ["作协理事会档案", "第 19 届理事会成员", "images/cover-nanyang-archive.jpg"],
-      ["活动报道", "可连接 Facebook 与资讯活动", "images/cover-textbook.jpg"]
+      ["《导盲犬》", "文类：童诗 / 诗歌，资料待核实补全", "images/placeholder-cover.png"],
+      ["作协理事会档案", "第21届理事会秘书长", "images/placeholder-cover.png"],
+      ["活动报道", "可连接 Facebook 与资讯活动", "images/placeholder-cover.png"]
     ]
   },
   "wu-yanling": {
@@ -674,46 +702,67 @@ const writerProfiles = {
     source: "资料参考：新纪元大学学院教师资料、大将书行书籍资料、作协新书预购页面。",
     works: [
       ["《华文教科书上的马华文学（国中篇）》", "主编 / 马华文学教材阅读", "images/cover-textbook.jpg"],
-      ["《写在家国之内》", "阅读札记 / 马华文学", "images/cover-nanyang-archive.jpg"],
-      ["马华文学研究论文", "研究方向：文学史、现代性、教材", "images/cover-course-archive.jpg"]
+      ["《写在家国之内》", "阅读札记 / 马华文学", "images/placeholder-cover.png"],
+      ["马华文学研究论文", "研究方向：文学史、现代性、教材", "images/placeholder-cover.png"]
     ]
   },
   "bicheng": {
     name: "碧澄",
-    photo: "images/zuoxie-logo-cutout.png",
+    photo: "images/placeholder-writer.png",
     tags: ["短篇小说", "马华文学", "文学史料", "新书推介"],
     intro: "碧澄为马华文学相关作者。作协原网页曾刊载“碧澄短篇小说自选集《过尽流波》推介”，约 300 位文学同好参与线上活动；作协会史资料也注明部分内容取自碧澄关于马来西亚华文作家的文章。",
     source: "资料参考：作协原网页《过尽流波》推介、关于作协会史页面。",
     works: [
-      ["《过尽流波》", "短篇小说自选集", "images/cover-nanyang-archive.jpg"],
-      ["马华作家史料文章", "关联：作协会史与资料库", "images/cover-course-archive.jpg"],
-      ["活动报道", "线上新书推介与文学交流", "images/cover-textbook.jpg"]
+      ["《过尽流波》", "短篇小说自选集", "images/placeholder-cover.png"],
+      ["马华作家史料文章", "关联：作协会史与资料库", "images/placeholder-cover.png"],
+      ["活动报道", "线上新书推介与文学交流", "images/placeholder-cover.png"]
     ]
   },
   "qinlin": {
     name: "秦林",
-    photo: "images/zuoxie-logo-cutout.png",
+    photo: "images/placeholder-writer.png",
     tags: ["现代诗", "狮城诗人", "纪念档案", "新华文学"],
     intro: "秦林为新加坡诗人。作协原网页曾发布“致哀：狮城诗人秦林逝世”，记录他于 2020 年 6 月逝世，消息在马新文艺圈传开。此页适合作为纪念型作者档案，串联诗作、悼文与文学史位置。",
     source: "资料参考：作协原网页“致哀：狮城诗人秦林逝世”。",
     works: [
-      ["现代诗作品", "文类：现代诗，书目待补", "images/cover-course-archive.jpg"],
-      ["纪念报道", "关联：作协悼文与文学圈记忆", "images/cover-nanyang-archive.jpg"],
-      ["新华文学关联", "可连接研究资料与诗歌文类", "images/cover-textbook.jpg"]
+      ["现代诗作品", "文类：现代诗，书目待补", "images/placeholder-cover.png"],
+      ["纪念报道", "关联：作协悼文与文学圈记忆", "images/placeholder-cover.png"],
+      ["新华文学关联", "可连接研究资料与诗歌文类", "images/placeholder-cover.png"]
     ]
   },
   young: {
     name: "青年作者",
-    photo: "images/zuoxie-logo-cutout.png",
+    photo: "images/placeholder-writer.png",
     tags: ["文学奖", "新生代", "短篇小说", "散文 / 新诗"],
     intro: "青年作者档案用于承接海鸥青年文学奖、新人作品、征稿与得奖作品。海鸥青年文学奖公开给年龄不超过 35 岁的大马公民参加，文类包括短篇小说、散文和新诗。",
     source: "资料参考：作协原网页“海鸥青年文学奖收件”。",
     works: [
-      ["海鸥青年文学奖作品", "文类：小说 / 散文 / 新诗", "images/cover-course-archive.jpg"],
-      ["新人作品库", "可作为后台投稿与作品展示入口", "images/cover-nanyang-archive.jpg"],
-      ["金牌作者机制", "可由评分与书评长期累积产生", "images/cover-textbook.jpg"]
+      ["海鸥青年文学奖作品", "文类：小说 / 散文 / 新诗", "images/placeholder-cover.png"],
+      ["新人作品库", "可作为后台投稿与作品展示入口", "images/placeholder-cover.png"],
+      ["金牌作者机制", "可由评分与书评长期累积产生", "images/placeholder-cover.png"]
     ]
   }
+};
+
+const writerColumnArticles = {
+  "wu-yanling": [
+    { category: "理事文章", title: "在教材中重读马华文学", excerpt: "从文学教育、阅读方法与本土文本出发，示范理事文章与作者档案的双向关联。", url: "writer-council.html" }
+  ],
+  "liu-yulong": [
+    { category: "理事文章", title: "童诗如何打开地方经验", excerpt: "以童诗、活动现场与地方感为线索，连接作者资料和专栏内容。", url: "writer-council.html" }
+  ],
+  "pan-bihua": [
+    { category: "会员文章", title: "雨后槟榔屿的旧时光", excerpt: "一场雨洗净了街道，也洗亮了记忆里的老屋、老树和旧书店。", url: "writer-members.html" }
+  ],
+  "dai-xiaohua": [
+    { category: "会员文章", title: "给时间的信", excerpt: "以诗歌保存时间与记忆，并连接作者个人档案。", url: "writer-members.html" }
+  ],
+  bicheng: [
+    { category: "会员文章", title: "渡口的人", excerpt: "从小说创作延伸至地方经验与马华文学史料。", url: "writer-members.html" }
+  ],
+  young: [
+    { category: "青年作家", title: "那天的风，吹来了答案", excerpt: "为新人作品、文学奖入选作品和成长记录预留独立入口。", url: "writer-young.html" }
+  ]
 };
 
 const writerName = document.querySelector("[data-writer-name]");
@@ -725,6 +774,7 @@ if (writerName) {
   const tags = document.querySelector("[data-writer-tags]");
   const intro = document.querySelector("[data-writer-intro]");
   const works = document.querySelector("[data-writer-works]");
+  const columns = document.querySelector("[data-writer-columns]");
   const source = document.querySelector("[data-writer-source]");
   writerName.textContent = profile.name;
   if (photo) {
@@ -738,5 +788,66 @@ if (writerName) {
       <article class="work-item"><img src="${image}" alt="${title}"><h3>${title}</h3><p>${text}</p><a href="read-book.html">查看关联</a></article>
     `).join("");
   }
+  if (columns) {
+    const articles = writerColumnArticles[params.get("writer") || "pan-bihua"] || [];
+    columns.innerHTML = `
+      <div class="profile-section-head"><p class="eyebrow">Writer Columns</p><h2>专栏文章</h2></div>
+      ${articles.length ? `<div class="profile-column-grid">${articles.map((article) => `
+        <article><span>${article.category}</span><h3>${article.title}</h3><p>${article.excerpt}</p><a href="${article.url}">前往栏目页</a></article>
+      `).join("")}</div>` : "<p>此作者尚未关联专栏文章，后续上架后会自动显示在这里。</p>"}
+    `;
+  }
   if (source) source.textContent = profile.source;
+}
+
+const majorTitleSelector = [
+  "[data-title-animate]",
+  "main h1",
+  ".section-head h2",
+  ".compact-head h2",
+  ".library-title-row h2",
+  ".legal-article h2",
+  ".profile-section-head h2"
+].join(",");
+const majorTitles = [...new Set(document.querySelectorAll(majorTitleSelector))];
+majorTitles.forEach((title) => title.classList.add("title-reveal"));
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+  majorTitles.forEach((title) => title.classList.add("is-visible"));
+} else {
+  const revealTitle = (title) => {
+    if (title.classList.contains("is-visible")) return;
+    title.classList.add("is-visible");
+  };
+  const revealVisibleTitles = () => {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    majorTitles.forEach((title) => {
+      if (title.classList.contains("is-visible")) return;
+      const rect = title.getBoundingClientRect();
+      if (rect.top < viewportHeight * .92 && rect.bottom > viewportHeight * .05) revealTitle(title);
+    });
+  };
+  let titleRevealFrame = 0;
+  const scheduleTitleReveal = () => {
+    if (titleRevealFrame) return;
+    titleRevealFrame = window.requestAnimationFrame(() => {
+      titleRevealFrame = 0;
+      revealVisibleTitles();
+    });
+  };
+  const titleObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      revealTitle(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+  majorTitles.forEach((title) => titleObserver.observe(title));
+  document.addEventListener("scroll", scheduleTitleReveal, true);
+  window.addEventListener("resize", scheduleTitleReveal, { passive: true });
+  window.addEventListener("hashchange", scheduleTitleReveal);
+  window.addEventListener("pageshow", scheduleTitleReveal);
+  window.requestAnimationFrame(scheduleTitleReveal);
+  window.setTimeout(scheduleTitleReveal, 180);
+  window.setTimeout(scheduleTitleReveal, 520);
 }

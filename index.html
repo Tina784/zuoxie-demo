@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./site.css">
+  <link rel="stylesheet" href="./site.css?v=20260802-12">
 </head>
 <body>
   <header class="site-header" id="top">
@@ -17,14 +17,11 @@
       <span>马来西亚华文作家协会<small>Malaysia Chinese Writers Association</small></span>
     </a>
     <nav class="main-nav" aria-label="主要导航">
-      <a href="#library">图书馆</a>
-      <a href="#bookshop">书</a>
-      <a href="#writers">写书人</a>
-      <a href="#updates">资讯与活动</a>
-      <a href="course.html">课程</a>
-      <a href="#about">关于作协</a>
-      <a href="award.html">文学奖</a>
-      <a href="contact.html">联系我们</a>
+      <div class="nav-group"><a href="#about">关于作协</a><div class="nav-submenu"><a href="#about-intro">作协简介</a><a href="#council">作协理事会</a></div></div>
+      <div class="nav-group"><a href="events.html">活动</a><div class="nav-submenu"><a href="event-tea.html">与作家的下午茶</a><a href="event-landscape.html">爱我山河·文学写生</a></div></div>
+      <div class="nav-group"><a href="course.html">课程</a><div class="nav-submenu"><a href="course-creative.html">深耕文学创作班</a><a href="course-appreciation.html">扎根文学鉴赏班</a></div></div>
+      <div class="nav-group"><a href="writer-columns.html">作家专栏</a><div class="nav-submenu"><a href="writer-council.html">理事文章</a><a href="writer-members.html">会员文章</a><a href="writer-young.html">青年作家</a></div></div>
+      <a href="award.html">文学奖</a><a href="#bookshop">书店</a><a href="contact.html">联系我们</a>
     </nav>
     <label class="nav-search">
       <span>搜索</span>
@@ -94,10 +91,8 @@
         <label class="section-search"><span>找书</span><input class="js-book-search" type="search" placeholder="请输入书名或作者名"></label>
       </div>
       <div class="book-row">
-        <article class="book-card" data-book data-title="《华文教科书上的马华文学（国中篇）》" data-price="40" data-search="教科书上的马华文学 伍燕翎 文学鉴赏"><span>最新上架</span><img src="images/cover-textbook.jpg" alt="教科书上的马华文学封面"><h3>《华文教科书上的马华文学（国中篇）》</h3><p>文学鉴赏读本，可连接课程与阅读页。</p><strong>RM40</strong><button class="add-book" type="button">加入购物车</button></article>
-        <article class="book-card" data-book data-title="《南洋文艺丛书》" data-price="36" data-search="南洋文艺丛书 档案"><span>最新上架</span><img src="images/cover-nanyang-archive.jpg" alt="南洋文艺档案封面"><h3>《南洋文艺丛书》</h3><p>旧刊资料与文学史入口。</p><strong>RM36</strong><button class="add-book" type="button">加入购物车</button></article>
-        <article class="book-card" data-book data-title="《深耕文学创作课程作品》" data-price="30" data-search="深耕文学创作课程 课程作品"><span>最新上架</span><img src="images/cover-course-archive.jpg" alt="深耕文学课程作品封面"><h3>《深耕文学创作课程作品》</h3><p>导师、学员与课程作品集。</p><strong>RM30</strong><button class="add-book" type="button">加入购物车</button></article>
-        <article class="book-card hot" data-book data-title="《复始之地·乡土篇》" data-price="45" data-search="复始之地 乡土篇 热卖"><span>热卖</span><img src="images/cover-fushi.jpg" alt="复始之地乡土篇封面"><h3>《复始之地·乡土篇》</h3><p>马华乡土文学专题。</p><strong>RM45</strong><button class="add-book" type="button">加入购物车</button></article>
+        <article class="book-card" data-book data-title="《华文教科书上的马华文学（国中篇）》" data-price="xx" data-search="教科书上的马华文学 伍燕翎 文学鉴赏"><span>最新上架</span><img src="images/cover-textbook.jpg" alt="教科书上的马华文学封面"><h3>《华文教科书上的马华文学（国中篇）》</h3><p>文学鉴赏读本，可连接课程与阅读页。</p><strong>RM xx</strong><button class="add-book" type="button">加入购物车</button></article>
+        <article class="book-card hot" data-book data-title="《复始之地·乡土篇》" data-price="xx" data-search="复始之地 乡土篇 热卖"><span>热卖</span><img src="images/cover-fushi.jpg" alt="复始之地乡土篇封面"><h3>《复始之地·乡土篇》</h3><p>马华乡土文学专题。</p><strong>RM xx</strong><button class="add-book" type="button">加入购物车</button></article>
       </div>
       <button class="cart-float" type="button" aria-label="打开购书清单"><img src="images/icon-cart-white.png" alt=""><b>0</b></button>
     </section>
@@ -106,6 +101,7 @@
       <div class="section-head compact-head">
         <div><p class="eyebrow">Writers</p><h2>写书人</h2></div>
         <div class="writer-tools">
+          <a class="button gold writer-zone-entry" href="writer-columns.html">进入作家专栏</a>
           <a class="button museum-outline writer-zone-entry" href="writer-zone.html">写书人专区</a>
           <label class="section-search"><span>找作者</span><input class="js-writer-search" type="search" placeholder="请输入书名或作者名"></label>
         </div>
@@ -116,11 +112,11 @@
         <a class="writer-card writer-batch" href="writer-profile.html?writer=pan-bihua" target="_blank" rel="noopener" data-writer-search="潘碧华 散文 学术 传火人" data-batch="0"><img src="images/writer-pan-bihua.jpg" alt="潘碧华照片"><span>散文 / 学术</span><h3>潘碧华</h3><p>代表作：《传火人》</p></a>
         <a class="writer-card writer-batch" href="writer-profile.html?writer=dai-xiaohua" target="_blank" rel="noopener" data-writer-search="戴小华 童诗 文化教育" data-batch="0"><img src="images/writer-dai-xiaohua.jpg" alt="戴小华照片"><span>童诗 / 文化教育</span><h3>戴小华</h3><p>童诗活动推广</p></a>
         <a class="writer-card writer-batch" href="writer-profile.html?writer=youjin" target="_blank" rel="noopener" data-writer-search="尤今 小说 散文 旅行文学" data-batch="0"><img src="images/writer-youjin.webp" alt="尤今照片"><span>小说 / 散文</span><h3>尤今</h3><p>旅行文学与小品文</p></a>
-        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=liu-yulong" target="_blank" rel="noopener" data-writer-search="刘育龙 童诗 导盲犬 新诗"><b>刘</b><span>诗歌 / 童诗</span><h3>刘育龙</h3><p>新诗与童诗活动</p></a>
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=liu-yulong" target="_blank" rel="noopener" data-writer-search="刘育龙 童诗 导盲犬 新诗"><img src="images/placeholder-writer.png" alt="刘育龙暂无照片"><span>诗歌 / 童诗</span><h3>刘育龙</h3><p>新诗与童诗活动</p></a>
         <a class="writer-card writer-batch" href="writer-profile.html?writer=wu-yanling" target="_blank" rel="noopener" data-writer-search="伍燕翎 评论 教材 马华文学" data-batch="0"><img src="images/writer-wu-yanling.png" alt="伍燕翎照片"><span>评论 / 教材</span><h3>伍燕翎</h3><p>主编：《华文教科书上的马华文学》</p></a>
-        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=bicheng" target="_blank" rel="noopener" data-writer-search="碧澄 短篇小说" data-batch="1"><b>碧</b><span>短篇小说</span><h3>碧澄</h3><p>资料待补全</p></a>
-        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=qinlin" target="_blank" rel="noopener" data-writer-search="秦林 现代诗" data-batch="1"><b>秦</b><span>现代诗</span><h3>秦林</h3><p>资料待补全</p></a>
-        <a class="writer-card text-card writer-batch" href="writer-profile.html?writer=young" target="_blank" rel="noopener" data-writer-search="青年作者 文学奖" data-batch="1"><b>青</b><span>文学奖</span><h3>青年作者</h3><p>海鸥青年文学奖作品</p></a>
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=bicheng" target="_blank" rel="noopener" data-writer-search="碧澄 短篇小说" data-batch="1"><img src="images/placeholder-writer.png" alt="碧澄暂无照片"><span>短篇小说</span><h3>碧澄</h3><p>资料待补全</p></a>
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=qinlin" target="_blank" rel="noopener" data-writer-search="秦林 现代诗" data-batch="1"><img src="images/placeholder-writer.png" alt="秦林暂无照片"><span>现代诗</span><h3>秦林</h3><p>资料待补全</p></a>
+        <a class="writer-card writer-batch" href="writer-profile.html?writer=young" target="_blank" rel="noopener" data-writer-search="青年作者 文学奖" data-batch="1"><img src="images/placeholder-writer.png" alt="青年作者暂无照片"><span>文学奖</span><h3>青年作者</h3><p>海鸥青年文学奖作品</p></a>
         </div>
         <button class="writer-nav writer-next" type="button" aria-label="下一组写书人">→</button>
       </div>
@@ -158,48 +154,42 @@
     </section>
     <section class="snap-section about-council-section" id="about">
       <div class="about-council-grid">
-        <div class="about-panel">
-          <div class="about-photo-strip single-photo" aria-label="作协大合照展示">
-            <span></span>
-          </div>
-          <div class="about-copy">
+        <div class="about-panel about-reference-layout">
+          <div class="about-copy about-reference-copy" id="about-intro">
             <p class="eyebrow">About Association</p>
-            <h2>关于作协</h2>
-            <p>马来西亚华文作家协会保存写作现场、推动出版交流，也让马华文学的记忆持续被看见。</p>
-            <p>新版网站把资讯、活动、写书人、图书馆与购书入口整合成可长期维护的文学档案馆。这里可以放协会大合照、会史简介、会员活动和未来想长期保存的公共文化资料。</p>
+            <div class="about-title-row">
+              <h2 data-title-animate>关于作协</h2>
+              <span class="about-title-seal" aria-hidden="true">华文<br>作协</span>
+            </div>
+            <p class="about-motto">以文会友 · 以笔传心 · 以学促新</p>
           </div>
-          <aside class="sponsor-note">
-            <span>Special Thanks</span>
-            <h3>特别鸣谢</h3>
-            <p>赞助商与合作单位可在这里以克制但隆重的方式展示，不影响读者阅读主要内容。</p>
-            <div><b>赞助单位 A</b><b>文化伙伴 B</b><b>出版支持 C</b></div>
-          </aside>
+          <div class="about-body-copy">
+            <p>马来西亚华文作家协会（简称大马作协）自1978年成立以来，始终以推动华文文学的发展与传承为核心使命。四十余年来，大马作协不仅持续培育新生代写作者，也通过举办写作比赛、文学讲习班、学术研讨会及文学节等多元活动，拓展文学影响力，提升社会大众对文学的关注与认同。同时，积极推动书刊出版，系统整理与保存珍贵的文学史料，为马华文学的积累与传承奠定坚实基础。</p>
+            <p>在创作与阅读并重的发展方向下，大马作协近年来持续深化文学教育的推广工作。由大马作协主办的“深耕文学创作课程”至今已迈入第九届，成功培育一批稳定写作、持续耕耘的文学工作者。2025年12月推出的“扎根马华文学鉴赏班”，更吸引近300人踊跃报名参与，反映社会对文学阅读与教学专业化的高度需求。课程以培养文学读者为目标，着力为站在教育第一线的教师注入能量，协助其提升学生的文学鉴赏与理解能力，进一步扩大文学教育的影响力。</p>
+            <p>继2025年举办“爱我山河·文学写生：巴生五条港”，获得广泛好评与热烈回响后，大马作协于2026年6月5日至6日举办“爱我山河·文学写生：吉打布秧谷”。活动以“地方书写”为核心，通过实地走访与观察，引领参与者走入历史现场，理解文化脉络，并将所见所感转化为文字，进一步思考“我们从哪里来，又该如何书写自己的地方”。</p>
+            <p>从创作人才的培育、文学阅读的推广，到地方文化的书写与文学史料的保存，大马作协始终秉持扎根本土、放眼未来的理念，持续推动马华文学的发展，凝聚文学力量，为本地文学文化的传承与创新注入源源不断的活力。</p>
+          </div>
+          <figure class="about-photo-strip about-reference-photo single-photo">
+            <img src="images/council-21-group.jpeg" alt="马来西亚华文作家协会第21届理事会成员大合照">
+          </figure>
         </div>
-        <div class="council-panel">
+        <div class="about-reference-divider" aria-hidden="true"><span>亭</span></div>
+        <div class="council-panel" id="council">
           <p class="eyebrow">Council</p>
           <h2>作协理事会</h2>
-          <p>第 19 届（2019-2022）理事会成员资料先集中展示，未来可继续扩充历届理事会档案。</p>
+          <p>第21届（2025-2028年）理事会成员</p>
           <div class="council-list">
-            <p><b>会长</b>潘碧华</p>
-            <p><b>副会长</b>李忆莙、柯金德、年红、胡清朝</p>
-            <p><b>秘书长</b>冯宛庭</p>
-            <p><b>副秘书长</b>伍燕翎、林玉蓉</p>
-            <p><b>财政</b>周锦聪</p>
-            <p><b>副财政</b>黄建华</p>
-            <p><b>出版及发行组主任</b>蔡晓玲</p>
-            <p><b>联络组主任</b>刘淑英</p>
-            <p><b>译介组主任</b>廖冰凌</p>
-            <p><b>资料组主任</b>李宣春</p>
-            <p><b>理事</b>吕育凤、刘育龙、舒颖、林建文、林杨凤</p>
-          </div>
-          <div class="state-committee-list">
-            <h3>各州联委会主席</h3>
-            <p><b>东海岸三州联委会</b>陈雯爱</p>
-            <p><b>槟吉玻三州联委会</b>罗秋雁</p>
-            <p><b>沙巴州联委会</b>冯学良</p>
-            <p><b>砂拉越州联委会</b>晨露</p>
-            <p><b>吡叻州联委会</b>王涛</p>
-            <p><b>柔佛州联委会</b>暂无</p>
+            <p><b>会长</b>伍燕翎博士</p>
+            <p><b>副会长</b>胡清朝、周若鹏、吕育陶、方路</p>
+            <p><b>秘书长</b>刘育龙</p>
+            <p><b>副秘书长</b>蔡晓玲博士、林健文</p>
+            <p><b>财政</b>郭紫薇博士</p>
+            <p><b>副财政兼宣传主任</b>谢增英博士</p>
+            <p><b>出版与发行组主任</b>谢依伦博士</p>
+            <p><b>研究、资料及译介组主任</b>廖冰凌博士</p>
+            <p><b>联络与福利组主任</b>林玉蓉</p>
+            <p><b>青年组主任</b>郑羽伦</p>
+            <p><b>理事</b>李鈜沬、招晓华、黄雯贞（心洁）、叶子欣、胡复兴、陈伟哲</p>
           </div>
         </div>
       </div>
@@ -230,6 +220,7 @@
           <h3>协会</h3>
           <nav>
             <a href="#about">关于作协</a>
+            <a href="writer-columns.html">作家专栏</a>
             <a href="writer-zone.html">写书人专区</a>
             <a href="contact.html">联系我们</a>
           </nav>
@@ -238,13 +229,13 @@
           <h3>联系</h3>
           <div class="footer-contact">
             <span>mychinesewriters@gmail.com</span>
-            <span>MPAJ Square, Lot 1009 MNR A, PSN MPAJ, Pandan Indah, Jalan Pandan Utama, 55100 Kuala Lumpur, Malaysia.</span>
+            <span>作协活动中心 · Unit 12-03, 1, Jln 19/3, Seksyen 19, 46300 Petaling Jaya, Selangor.</span>
           </div>
         </section>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Malaysia Chinese Writers Association · Designed &amp; Developed by Tina</span>
-        <span class="footer-legal"><a href="#">用户协议</a><a href="#">隐私政策</a></span>
+        <span class="footer-legal"><a href="legal.html" target="_blank" rel="noopener">用户协议与隐私政策</a></span>
       </div>
     </div>
   </footer>
@@ -257,6 +248,6 @@
     <div class="modal-article"></div>
   </dialog>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="./site.js"></script>
+  <script src="./site.js?v=20260802-12"></script>
 </body>
 </html>
