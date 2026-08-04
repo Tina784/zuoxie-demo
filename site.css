@@ -700,7 +700,7 @@ button, input, textarea { font: inherit; }
     radial-gradient(circle at 88% 18%, rgba(198,166,110,.24), transparent 32%);
   box-shadow: 0 32px 90px rgba(31,26,22,.11);
 }
-.archive-stamp {
+.archive-label {
   width: 128px;
   min-height: 210px;
   display: grid;
@@ -1601,20 +1601,6 @@ button, input, textarea { font: inherit; }
   opacity: .75;
   filter: blur(.4px);
 }
-.about-title-seal {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  min-width: 44px;
-  height: 70px;
-  padding: 5px 2px;
-  border: 2px solid #b23a2f;
-  border-radius: 5px;
-  color: #b23a2f;
-  font: 700 13px/1.05 var(--serif);
-  text-align: center;
-  letter-spacing: .14em;
-}
 .about-reference-copy p.about-motto {
   max-width: none;
   margin: 34px 0 20px;
@@ -1720,12 +1706,6 @@ button, input, textarea { font: inherit; }
   .about-reference-copy .about-title-row h1,
   .about-reference-copy .about-title-row h2 {
     font-size: clamp(54px, 18vw, 72px);
-  }
-  .about-title-seal {
-    width: 36px;
-    min-width: 36px;
-    height: 58px;
-    font-size: 11px;
   }
   .about-reference-copy .about-motto {
     margin-top: 30px;
@@ -3945,19 +3925,6 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
   font: 600 clamp(66px, 6.7vw, 104px)/.98 var(--serif);
   letter-spacing: .02em;
 }
-.title-seal {
-  display: inline-grid;
-  place-items: center;
-  width: 30px;
-  height: 48px;
-  margin-left: 12px;
-  border: 2px solid #c94a30;
-  border-radius: 9px;
-  color: #c94a30;
-  font: 700 15px/1.05 var(--serif);
-  letter-spacing: 0;
-  vertical-align: .18em;
-}
 .reference-lead {
   margin: 30px 0 0;
   color: rgba(53,43,34,.68);
@@ -4347,7 +4314,6 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
   .reference-hero h1,
   .column-reference-hero h1,
   .feed-reference-hero h1 { font-size: clamp(46px, 14vw, 64px); }
-  .title-seal { width: 24px; height: 40px; margin-left: 6px; font-size: 12px; }
   .reference-lead { font-size: 15px; }
   .reference-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .reference-button { min-width: 0; padding: 11px 16px; }
@@ -4545,12 +4511,6 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
     height: 6px;
   }
   .about-title-row { gap: 14px; }
-  .about-title-seal {
-    width: 34px;
-    min-width: 34px;
-    height: 52px;
-    font-size: 10px;
-  }
   .about-reference-copy p.about-motto {
     margin: 29px 0 0;
     font-size: clamp(15px, 4.3vw, 18px);
@@ -4600,7 +4560,7 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
   .editorial-card.is-feature { min-height: 260px; }
   .course-brochure { grid-template-columns: 1fr; }
   .course-leaf { min-height: 300px; }
-  .archive-stamp { width: 112px; font-size: 72px; }
+  .archive-label { width: 112px; font-size: 72px; }
 }
 
 @media (max-width: 560px) {
@@ -4859,4 +4819,135 @@ main > section > * {
   background:
     linear-gradient(180deg, rgba(246,241,232,0), rgba(246,241,232,.96) 58%, rgba(246,241,232,0)),
     radial-gradient(ellipse at 60% 30%, rgba(216,176,106,.12), transparent 46%);
+}
+
+/* Soft light direction system */
+:root {
+  --warm-light: rgba(255, 230, 178, .34);
+  --soft-spotlight: rgba(255, 250, 241, .46);
+  --shadow-soft: rgba(31, 26, 22, .13);
+  --shadow-deep: rgba(10, 7, 5, .26);
+}
+
+.hero-section::after {
+  opacity: .24;
+  background:
+    radial-gradient(ellipse at 35% 18%, rgba(255,250,241,.46), transparent 35%),
+    linear-gradient(90deg, transparent, rgba(26,26,26,.20), transparent);
+}
+
+.hero-copy,
+.editorial-cover,
+.about-reference-copy,
+.contact-info-card,
+.page-card > .eyebrow,
+.archive-copy {
+  filter: drop-shadow(0 18px 34px rgba(31,26,22,.08));
+}
+
+.index-major-shell::after,
+.editorial-shell::after,
+.contact-shell::after,
+.about-reference-layout::after,
+.page-card::after,
+.archive-layout::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  width: min(520px, 42vw);
+  height: min(520px, 42vw);
+  right: -8%;
+  top: -10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--warm-light), rgba(255,250,241,.16) 36%, transparent 68%);
+  filter: blur(18px);
+  opacity: .68;
+}
+
+.index-major-shell,
+.editorial-shell,
+.contact-shell,
+.about-reference-layout,
+.page-card,
+.archive-layout {
+  position: relative;
+}
+
+.book-card,
+.editorial-card,
+.course-leaf,
+.writer-index,
+.contact-info-card,
+.contact-form-card,
+.about-reference-photo,
+.council-panel,
+.page-card,
+.archive-layout {
+  box-shadow:
+    0 22px 64px rgba(31,26,22,.08),
+    0 2px 0 rgba(255,250,241,.35) inset;
+}
+
+.book-card:hover,
+.editorial-card:hover,
+.course-leaf:hover,
+.writer-index-row:hover,
+.home-link-card:hover {
+  box-shadow:
+    0 30px 86px rgba(31,26,22,.13),
+    0 0 0 1px rgba(216,176,106,.32),
+    0 0 42px rgba(216,176,106,.18);
+}
+
+.council-panel,
+.award-page,
+.editorial-card.is-feature,
+.writer-index-row.submit {
+  box-shadow:
+    0 32px 100px var(--shadow-deep),
+    0 0 80px rgba(216,176,106,.10),
+    inset 0 1px 0 rgba(255,250,241,.10);
+}
+
+.council-panel::after,
+.award-page .page-card::after,
+.editorial-card.is-feature::after,
+.writer-index-row.submit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse at 18% 10%, rgba(255,250,241,.18), transparent 30%),
+    radial-gradient(ellipse at 88% 18%, rgba(216,176,106,.20), transparent 30%);
+  mix-blend-mode: screen;
+  opacity: .68;
+}
+
+.award-image,
+.map-card,
+.about-reference-photo img {
+  filter:
+    saturate(.96)
+    contrast(1.02)
+    drop-shadow(0 28px 58px rgba(31,26,22,.16));
+}
+
+.section-head h1,
+.section-head h2,
+.index-major-shell h2,
+.editorial-cover h1,
+.editorial-cover h2,
+.about-reference-copy .about-title-row h1,
+.about-reference-copy .about-title-row h2,
+.archive-copy h1,
+.archive-copy h2 {
+  text-shadow: 0 10px 26px rgba(31,26,22,.08);
+}
+
+.main-nav a:hover,
+.main-nav a.is-current {
+  text-shadow: 0 0 18px rgba(216,176,106,.26);
 }
