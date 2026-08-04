@@ -701,15 +701,18 @@ button, input, textarea { font: inherit; }
   box-shadow: 0 32px 90px rgba(31,26,22,.11);
 }
 .archive-stamp {
-  width: 150px;
-  aspect-ratio: 1;
+  width: 128px;
+  min-height: 210px;
   display: grid;
   place-items: center;
-  border: 2px solid rgba(184,100,55,.4);
-  border-radius: 28px;
-  color: rgba(184,100,55,.66);
-  font: 500 96px/1 var(--calligraphy);
-  transform: rotate(-4deg);
+  border: 1px solid rgba(198,166,110,.38);
+  border-radius: 999px;
+  color: rgba(74,56,45,.62);
+  background:
+    linear-gradient(180deg, rgba(255,250,241,.72), rgba(216,176,106,.16)),
+    rgba(255,250,241,.42);
+  font: 500 92px/1 var(--calligraphy);
+  box-shadow: inset 0 0 0 8px rgba(255,250,241,.22), 0 18px 42px rgba(31,26,22,.08);
 }
 .archive-copy h1,
 .archive-copy h2 {
@@ -4652,12 +4655,10 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
   .about-reference-layout > .about-body-copy p { font-size: 14.5px; line-height: 1.92; }
 }
 
-/* Subtle Chinese cultural aesthetic layer
+/* Subtle cultural aesthetic layer
    Kept restrained for a Malaysian Chinese literary association:
-   rice paper, ink wash, cinnabar accents, and quiet lattice order. */
+   rice paper, ink wash, soft transitions, and quiet lattice order. */
 :root {
-  --cinnabar: #9f3f2e;
-  --cinnabar-soft: rgba(159,63,46,.16);
   --ink-wash: rgba(31,26,22,.075);
   --paper-fiber: rgba(91,69,44,.035);
 }
@@ -4693,28 +4694,6 @@ body::before {
     radial-gradient(ellipse at 84% 90%, rgba(26,26,26,.16), transparent 42%);
 }
 
-.hero-copy::after,
-.about-reference-copy::after,
-.editorial-cover::after,
-.archive-copy::after {
-  content: "";
-  display: block;
-  width: 34px;
-  height: 34px;
-  margin-top: 18px;
-  border: 1px solid rgba(159,63,46,.46);
-  border-radius: 7px;
-  background:
-    linear-gradient(135deg, transparent 35%, rgba(159,63,46,.12) 36% 62%, transparent 63%),
-    rgba(159,63,46,.08);
-  transform: rotate(-7deg);
-  box-shadow: inset 0 0 0 3px rgba(159,63,46,.035);
-}
-
-.hero-copy::after {
-  margin-top: 24px;
-}
-
 .index-major-section,
 .about-council-section,
 .contact-page,
@@ -4728,12 +4707,12 @@ body::before {
 .editorial-section::after {
   content: "";
   position: absolute;
-  left: clamp(22px, 4vw, 70px);
-  right: clamp(22px, 4vw, 70px);
-  bottom: 28px;
+  left: 0;
+  right: 0;
+  bottom: -1px;
   height: 1px;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(74,56,45,.18), rgba(159,63,46,.22), rgba(74,56,45,.18), transparent);
+  background: linear-gradient(90deg, transparent, rgba(74,56,45,.12), rgba(216,176,106,.16), rgba(74,56,45,.12), transparent);
 }
 
 .index-major-section,
@@ -4772,8 +4751,8 @@ body::before {
   pointer-events: none;
   opacity: .34;
   background:
-    linear-gradient(90deg, rgba(159,63,46,.18) 0 1px, transparent 1px calc(100% - 1px), rgba(159,63,46,.10) calc(100% - 1px)),
-    linear-gradient(0deg, rgba(159,63,46,.14) 0 1px, transparent 1px calc(100% - 1px), rgba(159,63,46,.08) calc(100% - 1px));
+    linear-gradient(90deg, rgba(198,166,110,.2) 0 1px, transparent 1px calc(100% - 1px), rgba(198,166,110,.12) calc(100% - 1px)),
+    linear-gradient(0deg, rgba(198,166,110,.16) 0 1px, transparent 1px calc(100% - 1px), rgba(198,166,110,.08) calc(100% - 1px));
 }
 
 .council-panel::before,
@@ -4801,23 +4780,83 @@ body::before {
     linear-gradient(120deg, transparent 0 40%, rgba(255,250,241,.22) 46%, transparent 52%);
 }
 
-.main-nav a::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 6px;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: rgba(159,63,46,.72);
-  opacity: 0;
-  transform: translateX(-50%) scale(.5);
-  transition: opacity .2s ease, transform .2s ease;
+main {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(246,241,232,0), rgba(246,241,232,.92) 8%, rgba(246,241,232,.92) 92%, rgba(246,241,232,0)),
+    var(--paper);
 }
 
-.main-nav a:hover::before,
-.main-nav a.is-current::before,
-.main-nav a.is-active::before {
-  opacity: .8;
-  transform: translateX(-50%) scale(1);
+main > section {
+  position: relative;
+}
+
+main > section + section {
+  margin-top: -1px;
+}
+
+main > section + section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -86px;
+  height: 140px;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 55%, rgba(216,176,106,.10), transparent 42%),
+    radial-gradient(ellipse at 80% 42%, rgba(31,26,22,.065), transparent 38%),
+    linear-gradient(180deg, rgba(246,241,232,0), rgba(246,241,232,.82) 48%, rgba(246,241,232,0));
+}
+
+main > section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.snap-section.index-major-section,
+.snap-section.about-council-section,
+.snap-section.editorial-section,
+.snap-section.contact-page,
+.snap-section.bookshop-section {
+  padding-top: clamp(112px, 9vw, 150px);
+  padding-bottom: clamp(88px, 8vw, 132px);
+}
+
+.index-major-section:nth-of-type(even),
+.index-major-section:nth-of-type(odd) {
+  background-attachment: local;
+}
+
+.index-major-section:nth-of-type(even) {
+  background:
+    radial-gradient(ellipse at 84% 18%, rgba(216,176,106,.16), transparent 34%),
+    radial-gradient(ellipse at 12% 82%, rgba(82,111,99,.08), transparent 36%),
+    linear-gradient(180deg, #f7efe2 0%, #fbf6ec 48%, #f3eadc 100%);
+}
+
+.index-major-section:nth-of-type(odd) {
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(255,255,255,.55), transparent 35%),
+    radial-gradient(ellipse at 78% 80%, rgba(31,26,22,.055), transparent 38%),
+    linear-gradient(180deg, #f2e8da 0%, #faf4ea 52%, #f4eadc 100%);
+}
+
+.editorial-section,
+.about-council-section,
+.contact-page,
+.bookshop-section {
+  background:
+    radial-gradient(ellipse at 84% 16%, rgba(216,176,106,.15), transparent 36%),
+    radial-gradient(ellipse at 10% 80%, rgba(31,26,22,.055), transparent 36%),
+    linear-gradient(180deg, #f5ebdc, #fbf5ea 54%, #f2e7d8);
+}
+
+.home-hero + section::before {
+  top: -120px;
+  height: 190px;
+  background:
+    linear-gradient(180deg, rgba(246,241,232,0), rgba(246,241,232,.96) 58%, rgba(246,241,232,0)),
+    radial-gradient(ellipse at 60% 30%, rgba(216,176,106,.12), transparent 46%);
 }
