@@ -165,6 +165,8 @@ button, input, textarea { font: inherit; }
   height: 42px;
   display: grid;
   place-items: center;
+  justify-self: end;
+  margin-left: clamp(18px, 2vw, 34px);
   border: 1px solid rgba(255,250,241,.14);
   border-radius: 50%;
   color: var(--cream);
@@ -4491,6 +4493,7 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
     grid-row: 3;
     display: grid;
     justify-self: start;
+    margin-left: 0;
     margin-top: 8px;
   }
   .site-header.is-menu-open .google-login {
