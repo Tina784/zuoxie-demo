@@ -6,11 +6,11 @@ if (siteHeaderHost) {
       <span>马来西亚华文作家协会<small>Malaysia Chinese Writers Association</small></span>
     </a>
     <nav class="main-nav" aria-label="主要导航">
-      <div class="nav-group"><a href="about.html">关于作协</a><div class="nav-submenu"><a href="about.html">作协简介</a><a href="council.html">作协理事会</a></div></div>
-      <div class="nav-group"><a href="events.html">活动动态</a><div class="nav-submenu"><a href="events.html#activity">活动</a><a href="events.html#course">课程</a><a href="events.html#articles">文章发表</a><a href="events.html#visits">拜访交流</a><a href="event-tea.html" target="_blank" rel="noopener">与作家的下午茶</a><a href="event-landscape.html" target="_blank" rel="noopener">我爱山河文学写生</a></div></div>
-      <div class="nav-group"><a href="course.html">课程</a><div class="nav-submenu"><a href="course-creative.html">深耕文学创作班</a><a href="course-appreciation.html">扎根文学鉴赏班</a></div></div>
-      <div class="nav-group"><a href="writer-columns.html">作家专栏</a><div class="nav-submenu"><a href="writer-council.html">理事文章</a><a href="writer-members.html">会员文章</a><a href="writer-young.html">青年作家</a><a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">投稿</a></div></div>
-      <a href="award.html">文学奖</a><a href="bookshop.html">书店</a><a href="contact.html">联系我们</a><a href="zhongzi.html">种字网</a>
+      <div class="nav-group"><a href="index.html#about">关于作协</a><div class="nav-submenu"><a href="about.html" target="_blank" rel="noopener">作协简介</a><a href="council.html" target="_blank" rel="noopener">作协理事会</a></div></div>
+      <div class="nav-group"><a href="index.html#events">活动动态</a><div class="nav-submenu"><a href="events.html#activity" target="_blank" rel="noopener">活动</a><a href="events.html#course" target="_blank" rel="noopener">课程</a><a href="events.html#articles" target="_blank" rel="noopener">文章发表</a><a href="events.html#visits" target="_blank" rel="noopener">拜访交流</a><a href="event-tea.html" target="_blank" rel="noopener">与作家的下午茶</a><a href="event-landscape.html" target="_blank" rel="noopener">我爱山河文学写生</a></div></div>
+      <div class="nav-group"><a href="index.html#course">课程</a><div class="nav-submenu"><a href="course-creative.html" target="_blank" rel="noopener">深耕文学创作班</a><a href="course-appreciation.html" target="_blank" rel="noopener">扎根文学鉴赏班</a></div></div>
+      <div class="nav-group"><a href="index.html#writers">作家专栏</a><div class="nav-submenu"><a href="writer-council.html" target="_blank" rel="noopener">理事文章</a><a href="writer-members.html" target="_blank" rel="noopener">会员文章</a><a href="writer-young.html" target="_blank" rel="noopener">青年作家</a><a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">投稿</a></div></div>
+      <a href="index.html#award">文学奖</a><a href="index.html#bookshop">书店</a><a href="index.html#contact">联系我们</a><a href="index.html#zhongzi">种字网</a>
     </nav>
     <button class="nav-search-icon" type="button" aria-label="搜索">⌕</button>
     <button class="google-login" type="button">Google 登录</button>
