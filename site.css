@@ -160,6 +160,25 @@ button, input, textarea { font: inherit; }
   background: transparent;
 }
 .nav-search input::placeholder { color: rgba(255,250,241,.48); }
+.nav-search-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,250,241,.14);
+  border-radius: 50%;
+  color: var(--cream);
+  background: rgba(255,250,241,.1);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.nav-search-icon:hover,
+.nav-search-icon:focus-visible {
+  outline: none;
+  border-color: rgba(216,176,106,.52);
+  background: rgba(216,176,106,.18);
+}
 
 .snap-section {
   min-height: 100svh;
@@ -266,6 +285,88 @@ button, input, textarea { font: inherit; }
   border-color: rgba(74,56,45,.32);
   background: rgba(246,242,234,.4);
   backdrop-filter: blur(12px);
+}
+
+.home-link-section {
+  background:
+    radial-gradient(circle at 84% 16%, rgba(198,166,110,.22), transparent 26%),
+    radial-gradient(circle at 10% 76%, rgba(82,111,99,.14), transparent 32%),
+    var(--paper);
+}
+.home-link-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+.home-link-shell h2 {
+  margin-bottom: 14px;
+  font: 600 clamp(38px, 4.6vw, 68px)/1.1 var(--serif);
+}
+.home-link-shell > p {
+  max-width: 720px;
+  color: var(--soft);
+  line-height: 1.75;
+}
+.home-link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+.home-link-card {
+  min-height: 168px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  color: var(--ink);
+  background: rgba(255,250,241,.72);
+  text-decoration: none;
+  box-shadow: 0 22px 60px rgba(31,26,22,.08);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.home-link-card:hover,
+.home-link-card:focus-visible {
+  outline: none;
+  transform: translateY(-5px);
+  border-color: rgba(198,166,110,.72);
+  box-shadow: 0 30px 76px rgba(31,26,22,.13);
+}
+.home-link-card span {
+  color: var(--orange);
+  font: 700 22px/1.25 var(--serif);
+}
+.home-link-card b {
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.zhongzi-card {
+  max-width: 860px;
+  margin-top: 36px;
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid rgba(198,166,110,.32);
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(255,250,241,.88), rgba(255,250,241,.62)),
+    radial-gradient(circle at 90% 12%, rgba(198,166,110,.28), transparent 30%);
+  box-shadow: 0 30px 84px rgba(31,26,22,.1);
+}
+.zhongzi-card span {
+  color: var(--orange);
+  font: 600 18px/1.5 var(--serif);
+}
+.zhongzi-card h2 {
+  margin: 16px 0;
+  font: 600 clamp(32px, 4vw, 54px)/1.15 var(--serif);
+}
+.zhongzi-card p {
+  max-width: 700px;
+  color: var(--soft);
+  line-height: 1.8;
 }
 
 .hero-dust {
@@ -3956,6 +4057,7 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
   .site-header.is-menu-open .mobile-nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
   .site-header .main-nav,
   .site-header .nav-search,
+  .site-header .nav-search-icon,
   .site-header .google-login {
     display: none;
   }
@@ -3993,6 +4095,13 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
     display: grid;
     width: 100%;
     height: 46px;
+    margin-top: 8px;
+  }
+  .site-header.is-menu-open .nav-search-icon {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: grid;
+    justify-self: start;
     margin-top: 8px;
   }
   .site-header.is-menu-open .google-login {
@@ -4077,6 +4186,15 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
   .about-reference-divider + .council-panel {
     margin-top: 54px;
   }
+}
+
+@media (max-width: 980px) {
+  .home-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .home-link-grid { grid-template-columns: 1fr; }
+  .home-link-card { min-height: 132px; }
 }
 
 @media (min-width: 861px) {

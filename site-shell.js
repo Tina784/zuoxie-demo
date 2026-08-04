@@ -7,12 +7,12 @@ if (siteHeaderHost) {
     </a>
     <nav class="main-nav" aria-label="主要导航">
       <div class="nav-group"><a href="index.html#about">关于作协</a><div class="nav-submenu"><a href="index.html#about-intro">作协简介</a><a href="index.html#council">作协理事会</a></div></div>
-      <div class="nav-group"><a href="events.html">活动</a><div class="nav-submenu"><a href="event-tea.html">与作家的下午茶</a><a href="event-landscape.html">爱我山河·文学写生</a></div></div>
+      <div class="nav-group"><a href="events.html">活动动态</a><div class="nav-submenu"><a href="events.html#activity">活动</a><a href="events.html#course">课程</a><a href="events.html#articles">文章发表</a><a href="events.html#visits">拜访交流</a><a href="event-tea.html" target="_blank" rel="noopener">与作家的下午茶</a><a href="event-landscape.html" target="_blank" rel="noopener">我爱山河文学写生</a></div></div>
       <div class="nav-group"><a href="course.html">课程</a><div class="nav-submenu"><a href="course-creative.html">深耕文学创作班</a><a href="course-appreciation.html">扎根文学鉴赏班</a></div></div>
-      <div class="nav-group"><a href="writer-columns.html">作家专栏</a><div class="nav-submenu"><a href="writer-council.html">理事文章</a><a href="writer-members.html">会员文章</a><a href="writer-young.html">青年作家</a></div></div>
-      <a href="award.html">文学奖</a><a href="index.html#bookshop">书店</a><a href="contact.html">联系我们</a>
+      <div class="nav-group"><a href="writer-columns.html">作家专栏</a><div class="nav-submenu"><a href="writer-council.html">理事文章</a><a href="writer-members.html">会员文章</a><a href="writer-young.html">青年作家</a><a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">投稿</a></div></div>
+      <a href="award.html">文学奖</a><a href="index.html#bookshop">书店</a><a href="contact.html">联系我们</a><a href="zhongzi.html">种字网</a>
     </nav>
-    <label class="nav-search"><span>搜索</span><input type="search" placeholder="请输入书名或作者名"></label>
+    <button class="nav-search-icon" type="button" aria-label="搜索">⌕</button>
     <button class="google-login" type="button">Google 登录</button>
   `;
 
@@ -23,6 +23,7 @@ if (siteHeaderHost) {
   if (currentPage.startsWith("writer")) currentNavHref = "writer-columns.html";
   if (currentPage === "award.html") currentNavHref = "award.html";
   if (currentPage === "contact.html") currentNavHref = "contact.html";
+  if (currentPage === "zhongzi.html") currentNavHref = "zhongzi.html";
   const currentNavLink = currentNavHref ? siteHeaderHost.querySelector(`.main-nav a[href="${currentNavHref}"]`) : null;
   if (currentNavLink) currentNavLink.classList.add("is-current");
 }
@@ -33,8 +34,8 @@ if (siteFooterHost) {
     <div class="footer-inner">
       <div class="footer-brand"><img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo"><div><h2>马来西亚华文作家协会</h2><p>书写马华文学 · 保存时代回声</p></div></div>
       <div class="footer-columns">
-        <section class="footer-col"><h3>资源</h3><nav><a href="index.html#library">电子图书馆</a><a href="index.html#bookshop">购书</a><a href="news.html">最新资讯</a><a href="events.html">活动</a><a href="course.html">课程</a><a href="award.html">文学奖</a></nav></section>
-        <section class="footer-col"><h3>协会</h3><nav><a href="index.html#about">关于作协</a><a href="writer-columns.html">作家专栏</a><a href="writer-zone.html">写书人专区</a><a href="contact.html">联系我们</a></nav></section>
+        <section class="footer-col"><h3>资源</h3><nav><a href="events.html">活动动态</a><a href="course.html">课程</a><a href="writer-columns.html">作家专栏</a><a href="award.html">文学奖</a><a href="index.html#bookshop">书店</a><a href="zhongzi.html">种字网</a></nav></section>
+        <section class="footer-col"><h3>协会</h3><nav><a href="index.html#about">关于作协</a><a href="index.html#council">作协理事会</a><a href="contact.html">联系我们</a></nav></section>
         <section class="footer-col"><h3>联系</h3><div class="footer-contact"><span>mychinesewriters@gmail.com</span><span>作协活动中心 · Unit 12-03, 1, Jln 19/3, Seksyen 19, 46300 Petaling Jaya, Selangor.</span></div></section>
       </div>
       <div class="footer-bottom"><span>© 2026 Malaysia Chinese Writers Association · Designed &amp; Developed by Tina</span><span class="footer-legal"><a href="legal.html" target="_blank" rel="noopener">用户协议与隐私政策</a></span></div>

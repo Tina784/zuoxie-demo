@@ -1,90 +1,41 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>活动报导 | 马来西亚华文作家协会</title>
+  <title>活动动态 | 马来西亚华文作家协会</title>
+  <meta name="description" content="马来西亚华文作家协会活动动态分类入口。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./site.css?v=20260802-12">
+  <link rel="stylesheet" href="./site.css?v=20260804-1">
 </head>
 <body class="listing-page">
-<header class="site-header" id="top">
-    <a class="brand" href="index.html#home" aria-label="回到首页">
-      <img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo">
-      <span>马来西亚华文作家协会<small>Malaysia Chinese Writers Association</small></span>
-    </a>
-    <nav class="main-nav" aria-label="主要导航">
-      <div class="nav-group"><a href="index.html#about">关于作协</a><div class="nav-submenu"><a href="index.html#about-intro">作协简介</a><a href="index.html#council">作协理事会</a></div></div>
-      <div class="nav-group"><a href="events.html">活动</a><div class="nav-submenu"><a href="event-tea.html">与作家的下午茶</a><a href="event-landscape.html">爱我山河·文学写生</a></div></div>
-      <div class="nav-group"><a href="course.html">课程</a><div class="nav-submenu"><a href="course-creative.html">深耕文学创作班</a><a href="course-appreciation.html">扎根文学鉴赏班</a></div></div>
-      <div class="nav-group"><a href="writer-columns.html">作家专栏</a><div class="nav-submenu"><a href="writer-council.html">理事文章</a><a href="writer-members.html">会员文章</a><a href="writer-young.html">青年作家</a></div></div>
-      <a href="award.html">文学奖</a><a href="index.html#bookshop">书店</a><a href="contact.html">联系我们</a>
-    </nav>
-    <label class="nav-search">
-      <span>搜索</span>
-      <input type="search" placeholder="请输入书名或作者名">
-    </label>
-    <button class="google-login" type="button">Google 登录</button>
-  </header>
-<main class="content-hub-page">
+  <header class="site-header" id="top" data-site-header></header>
+  <main class="content-hub-page">
     <section class="content-hub-shell">
       <div class="content-hub-hero">
-        <div><p class="eyebrow">Events</p><h1>活动</h1></div>
-        <p>从作家与读者的近距离交流，到走入地方现场的文学写生，两项活动各自拥有独立页面，方便持续累积届次、照片、文章和报名资讯。</p>
+        <div>
+          <p class="eyebrow">Activity Updates</p>
+          <h1>活动动态</h1>
+        </div>
+        <p>这个页面预留给日后串接 Facebook API 自动更新新帖子。动态会先依六大类归档，读者点选后以新标签页进入对应内容。</p>
       </div>
-      <div class="hub-card-grid two-columns">
-        <a class="hub-card" href="event-tea.html"><span>Conversation</span><h2>与作家的下午茶</h2><p>以轻松而深入的对谈连接作家、作品与读者，保存每一次交流的主题与现场记录。</p><b>进入活动页面 →</b></a>
-        <a class="hub-card" href="event-landscape.html"><span>Literary Fieldwork</span><h2>爱我山河·文学写生</h2><p>通过地方走访、历史观察与现场书写，把文化地景转化为可长期阅读的文字档案。</p><b>进入活动页面 →</b></a>
+      <div class="hub-card-grid">
+        <a id="activity" class="hub-card" href="https://www.facebook.com/mychinesewriters" target="_blank" rel="noopener"><span>Activity</span><h2>活动</h2><p>讲座、分享会、文学聚会与协会公开活动，将来由 Facebook 新帖自动归档。</p><b>打开活动动态 →</b></a>
+        <a id="course" class="hub-card" href="course.html" target="_blank" rel="noopener"><span>Courses</span><h2>课程</h2><p>深耕文学创作班、扎根文学鉴赏班及相关课程消息。</p><b>查看课程 →</b></a>
+        <a id="articles" class="hub-card" href="writer-columns.html" target="_blank" rel="noopener"><span>Articles</span><h2>文章发表</h2><p>作协理事、会员与青年作家的文章发表入口。</p><b>进入作家专栏 →</b></a>
+        <a id="visits" class="hub-card" href="https://www.facebook.com/mychinesewriters" target="_blank" rel="noopener"><span>Exchange</span><h2>拜访交流</h2><p>记录协会访问、文学交流、跨团体合作和友会往来。</p><b>打开交流动态 →</b></a>
+        <a class="hub-card feature-card" href="event-tea.html" target="_blank" rel="noopener"><span>Special Programme</span><h2>与作家的下午茶</h2><p>以轻松而深入的对谈连接作家、作品与读者。</p><b>进入专题页面 →</b></a>
+        <a class="hub-card feature-card" href="event-landscape.html" target="_blank" rel="noopener"><span>Literary Fieldwork</span><h2>我爱山河文学写生</h2><p>走入地方现场，把文化地景转化为可长期阅读的文字档案。</p><b>进入专题页面 →</b></a>
       </div>
     </section>
   </main>
-<footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo">
-        <div>
-          <h2>马来西亚华文作家协会</h2>
-          <p>书写马华文学 · 保存时代回声</p>
-        </div>
-      </div>
-      <div class="footer-columns">
-        <section class="footer-col">
-          <h3>资源</h3>
-          <nav>
-            <a href="index.html#library">电子图书馆</a>
-            <a href="index.html#bookshop">购书</a>
-            <a href="news.html">最新资讯</a>
-            <a href="events.html">活动报导</a>
-            <a href="award.html">文学奖</a>
-            <a href="course.html">课程</a>
-          </nav>
-        </section>
-        <section class="footer-col">
-          <h3>协会</h3>
-          <nav>
-            <a href="index.html#about">关于作协</a>
-            <a href="writer-columns.html">作家专栏</a>
-            <a href="writer-zone.html">写书人专区</a>
-            <a href="contact.html">联系我们</a>
-          </nav>
-        </section>
-        <section class="footer-col">
-          <h3>联系</h3>
-          <div class="footer-contact">
-            <span>mychinesewriters@gmail.com</span>
-            <span>作协活动中心 · Unit 12-03, 1, Jln 19/3, Seksyen 19, 46300 Petaling Jaya, Selangor.</span>
-          </div>
-        </section>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Malaysia Chinese Writers Association · Designed &amp; Developed by Tina</span>
-        <span class="footer-legal"><a href="legal.html" target="_blank" rel="noopener">用户协议与隐私政策</a></span>
-      </div>
-    </div>
-  </footer>
-  <dialog class="content-modal" id="content-modal"><button class="modal-close" type="button" aria-label="关闭弹窗">×</button><p class="eyebrow modal-kind">Event</p><h2 class="modal-title"></h2><p class="modal-date"></p><div class="modal-article"></div></dialog>
-  <script src="./site.js?v=20260802-12"></script>
+  <footer class="site-footer" data-site-footer></footer>
+
+  <script src="./site-shell.js?v=20260804-1"></script>
+  <script src="./site.js?v=20260804-1"></script>
 </body>
 </html>
+
+
