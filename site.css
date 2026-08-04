@@ -4951,3 +4951,61 @@ main > section > * {
 .main-nav a.is-current {
   text-shadow: 0 0 18px rgba(216,176,106,.26);
 }
+
+/* Keep the Literary Award as a black-gold ceremony section. */
+#award.index-award-section.award-page {
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at 70% 18%, rgba(216,176,106,.32), transparent 26%),
+    radial-gradient(ellipse at 38% 8%, rgba(255,250,241,.10), transparent 24%),
+    radial-gradient(ellipse at 50% 86%, rgba(198,166,110,.16), transparent 36%),
+    linear-gradient(180deg, #090705 0%, #15100c 46%, #080706 100%) !important;
+}
+
+#award.index-award-section.award-page::before {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,250,241,.10), transparent 34%),
+    linear-gradient(180deg, rgba(216,176,106,.08), transparent 48%, rgba(0,0,0,.22)) !important;
+  opacity: 1;
+}
+
+#award.index-award-section.award-page::after {
+  background: linear-gradient(90deg, transparent, rgba(216,176,106,.26), transparent);
+}
+
+#award.index-award-section.award-page .page-card {
+  color: var(--cream);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+#award.index-award-section.award-page .page-card::after {
+  width: min(640px, 52vw);
+  height: min(640px, 52vw);
+  right: -12%;
+  top: -20%;
+  background: radial-gradient(circle, rgba(216,176,106,.22), rgba(216,176,106,.08) 36%, transparent 68%);
+  mix-blend-mode: screen;
+  opacity: .9;
+}
+
+#award.index-award-section.award-page h2 {
+  color: #fffaf1;
+  text-shadow: 0 18px 42px rgba(0,0,0,.45), 0 0 28px rgba(216,176,106,.18);
+}
+
+#award.index-award-section.award-page .page-card p,
+#award.index-award-section.award-page .award-empty {
+  color: rgba(255,250,241,.72);
+}
+
+#award.index-award-section.award-page .silk-timeline::before {
+  background: linear-gradient(90deg, transparent, rgba(216,176,106,.6), transparent);
+}
+
+#award.index-award-section.award-page .silk-timeline span {
+  color: #f6dba2;
+  background: rgba(255,250,241,.08);
+  border: 1px solid rgba(216,176,106,.28);
+}
