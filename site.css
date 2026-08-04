@@ -1857,7 +1857,8 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
 
 .simple-page { min-height: 100svh; padding: 130px clamp(24px, 7vw, 110px) 70px; }
 .page-card { width: min(1280px, 100%); margin: 0 auto; padding: clamp(34px, 6vw, 70px) 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
-.page-card h1 { font: 600 clamp(44px, 6vw, 82px)/1 var(--serif); }
+.page-card h1,
+.page-card h2 { font: 600 clamp(44px, 6vw, 82px)/1 var(--serif); }
 .page-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: start; }
 .profile-works, .zone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .profile-works article, .zone-grid article { padding: 20px; border-radius: 22px; border: 1px solid var(--line); background: var(--cream); }
@@ -1904,6 +1905,17 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
 .award-page { color: var(--cream); background: radial-gradient(circle at 68% 18%, rgba(198,166,110,.24), transparent 30%), #080706; }
 .award-page .page-card { color: var(--cream); background: transparent; border-color: transparent; }
 .award-page .page-card p { color: rgba(255,250,241,.72); line-height: 1.85; }
+.index-award-section {
+  min-height: 100svh;
+  padding-top: clamp(110px, 9vw, 150px);
+  padding-bottom: clamp(70px, 7vw, 110px);
+}
+.index-award-section .page-card {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  box-shadow: none;
+}
 .award-image { min-height: 440px; border-radius: 30px; background: url("images/award-haiou-2015.jpg") center/cover, linear-gradient(135deg, #15110f, #c6a66e); box-shadow: 0 36px 110px rgba(0,0,0,.46); }
 .award-years { margin-top: 34px; }
 .award-empty { padding: 22px; border: 1px dashed rgba(255,250,241,.22); border-radius: 22px; color: rgba(255,250,241,.58); }
@@ -2079,7 +2091,8 @@ body:not(.library-page-body) .back-arrow { color: var(--ink); background: rgba(2
   background: rgba(255,250,241,.76);
   box-shadow: 0 26px 74px rgba(39, 61, 80, .1);
 }
-.contact-info-card h1 {
+.contact-info-card h1,
+.contact-info-card h2 {
   margin-bottom: 18px;
   font: 600 clamp(40px, 5vw, 68px)/1 var(--serif);
 }
