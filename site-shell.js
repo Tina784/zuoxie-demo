@@ -12,10 +12,10 @@ if (siteHeaderHost) {
       <div class="nav-group"><a href="writer-columns.html">作家专栏</a><div class="nav-submenu"><a href="writer-council.html">理事文章</a><a href="writer-members.html">会员文章</a><a href="writer-young.html">青年作家</a></div></div>
       <a href="award.html">文学奖资讯</a>
       <a href="membership.html">注册会员</a>
-      <a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">种字网</a>
-      <a href="bookshop.html">书店</a>
       <a href="support.html">支持作协</a>
+      <a href="bookshop.html">书店</a>
       <a href="contact.html">联系我们</a>
+      <a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">种字网</a>
     </nav>
   `;
 
