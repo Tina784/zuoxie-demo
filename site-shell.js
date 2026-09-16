@@ -14,6 +14,7 @@ if (siteHeaderHost) {
       <a href="membership.html">注册会员</a>
       <a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">种字网</a>
       <a href="bookshop.html">书店</a>
+      <a href="support.html">支持作协</a>
       <a href="contact.html">联系我们</a>
     </nav>
   `;
@@ -27,6 +28,7 @@ if (siteHeaderHost) {
   if (currentPage === "award.html") currentNavHref = "award.html";
   if (currentPage === "membership.html") currentNavHref = "membership.html";
   if (currentPage === "bookshop.html") currentNavHref = "bookshop.html";
+  if (currentPage === "support.html") currentNavHref = "support.html";
   if (currentPage === "contact.html") currentNavHref = "contact.html";
   if (currentPage === "zhongzi.html") currentNavHref = "zhongzi.html";
   const currentNavLink = currentNavHref ? siteHeaderHost.querySelector(`.main-nav a[href="${currentNavHref}"]`) : null;
@@ -40,7 +42,7 @@ if (siteFooterHost) {
       <div class="footer-brand"><img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo"><div><h2>马来西亚华文作家协会</h2><p>书写马华文学 · 保存时代回声</p></div></div>
       <div class="footer-columns">
         <section class="footer-col"><h3>浏览</h3><nav><a href="events.html">活动与消息</a><a href="course.html">文学课程</a><a href="writer-columns.html">文学阅读</a><a href="bookshop.html">出版品</a></nav></section>
-        <section class="footer-col"><h3>协会</h3><nav><a href="about.html">会史与使命</a><a href="council.html">第21届理事会</a><a href="award.html">文学奖资讯</a><a href="membership.html">注册会员</a><a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">种字网</a></nav></section>
+        <section class="footer-col"><h3>协会</h3><nav><a href="about.html">会史与使命</a><a href="council.html">第21届理事会</a><a href="award.html">文学奖资讯</a><a href="membership.html">注册会员</a><a href="support.html">支持作协</a><a href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">种字网</a></nav></section>
         <section class="footer-col"><h3>联系</h3><div class="footer-contact"><a href="mailto:mychinesewriters@gmail.com">mychinesewriters@gmail.com</a><a href="https://www.facebook.com/mychinesewriters" target="_blank" rel="noopener">Facebook · 马华作协</a><span>实体活动地点请以最新活动公告为准</span></div></section>
       </div>
       <div class="footer-bottom"><span>© 2026 Malaysia Chinese Writers Association · Designed &amp; Developed by Tina</span><span class="footer-legal"><a href="legal.html" target="_blank" rel="noopener">用户协议与隐私政策</a></span></div>
