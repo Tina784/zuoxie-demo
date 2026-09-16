@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="马来西亚华文作家协会内容管理系统公开外观预览。">
+  <title>作协 CMS 外观预览</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./cms-preview.css?v=20260917-1">
+</head>
+<body>
+  <aside class="preview-sidebar">
+    <a class="preview-brand" href="index.html"><img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会标志"><span><b>作协 CMS</b><small>内容管理中心</small></span></a>
+    <nav aria-label="CMS 示范导航">
+      <button class="is-active" type="button" data-panel-target="dashboard"><span>⌂</span>首页概览</button>
+      <p>内容管理</p>
+      <button type="button" data-panel-target="content"><span>文</span>内容与发布</button>
+      <button type="button" data-panel-target="submissions"><span>报</span>报名与会员申请<em>8</em></button>
+      <button type="button" data-panel-target="facebook"><span>F</span>Facebook 同步</button>
+      <p>系统</p>
+      <button type="button" data-panel-target="security"><span>盾</span>账号与权限</button>
+    </nav>
+    <div class="preview-sidebar-note"><b>公开外观预览</b><p>这里不会连接真实账号，也不会显示真实报名资料。</p></div>
+  </aside>
+
+  <div class="preview-workspace">
+    <header class="preview-topbar"><div><b data-panel-title>首页概览</b><small>所有操作均保留记录</small></div><div class="preview-user"><span>示</span><p><b>示范管理员</b><small>只读预览</small></p></div></header>
+    <main>
+      <div class="preview-notice"><span>i</span><p><b>这是 CMS 外观展示页。</b> 可点击左侧菜单查看不同功能；页面不接受登录、不保存任何资料。</p><a href="index.html">返回官网 ↗</a></div>
+
+      <section class="demo-panel is-visible" data-panel="dashboard">
+        <div class="page-heading"><div><p class="eyebrow">17 SEPTEMBER 2026</p><h1>早安，内容管理员</h1><p>从这里更新官网内容、处理报名，并查看 Facebook 同步状态。</p></div><button class="primary-button" type="button" data-panel-target="content">＋ 新增内容</button></div>
+        <div class="metric-grid">
+          <article><span>已发布内容</span><strong>42</strong><small>活动、文章、课程与文学奖资讯</small></article>
+          <article><span>新课程报名</span><strong>6</strong><small>等待联络与确认</small></article>
+          <article><span>会员申请</span><strong>2</strong><small>等待协会审核</small></article>
+          <article class="is-live"><span>Facebook 同步</span><strong>正常</strong><small>每 15 分钟检查一次</small></article>
+        </div>
+        <div class="dashboard-grid">
+          <section class="card"><div class="card-heading"><div><p class="eyebrow">RECENT CONTENT</p><h2>最近更新</h2></div><button type="button" data-panel-target="content">查看全部 →</button></div><div class="row-list"><article><span class="row-icon">活</span><div><b>与作家的下午茶：九月场</b><small>活动 · 今天 09:20</small></div><em class="published">已发布</em></article><article><span class="row-icon">奖</span><div><b>本地文学奖征稿资讯</b><small>文学奖资讯 · 昨天 17:45</small></div><em class="draft">草稿</em></article><article><span class="row-icon fb">F</span><div><b>Facebook 最新活动贴文</b><small>自动同步 · 昨天 15:10</small></div><em class="published">已发布</em></article></div></section>
+          <aside class="card checklist"><div class="card-heading"><div><p class="eyebrow">PUBLISH CHECK</p><h2>发布前检查</h2></div></div><ol><li class="done"><span>✓</span><p><b>资料已经整理</b><small>标题、日期与图片齐全</small></p></li><li class="done"><span>✓</span><p><b>负责人已审核</b><small>保留内部批准记录</small></p></li><li><span>3</span><p><b>预览电脑和手机</b><small>确认排版与内容</small></p></li><li><span>4</span><p><b>确认发布</b><small>系统自动保存版本</small></p></li></ol></aside>
+        </div>
+      </section>
+
+      <section class="demo-panel" data-panel="content">
+        <div class="page-heading"><div><p class="eyebrow">CONTENT WORKFLOW</p><h1>内容与发布</h1><p>新增活动、文章、课程、作家、书籍及文学奖资讯。</p></div><button class="primary-button" type="button">＋ 新增内容</button></div>
+        <div class="toolbar"><label><span>⌕</span><input type="search" placeholder="输入标题或作者" disabled></label><select disabled><option>全部类型</option></select><select disabled><option>全部状态</option></select></div>
+        <section class="card table-card"><div class="table-head"><span>标题</span><span>类型</span><span>状态</span><span>更新时间</span></div><div class="table-row"><b>深耕文学创作班新一期招生</b><span>课程</span><em class="published">已发布</em><time>今天 10:05</time></div><div class="table-row"><b>九月文学活动预告</b><span>活动</span><em class="draft">草稿</em><time>今天 09:20</time></div><div class="table-row"><b>本地文学奖征稿资讯</b><span>文学奖资讯</span><em class="published">已发布</em><time>昨天 17:45</time></div><div class="table-row"><b>Facebook 最新活动贴文</b><span>自动同步</span><em class="published">已发布</em><time>昨天 15:10</time></div></section>
+      </section>
+
+      <section class="demo-panel" data-panel="submissions">
+        <div class="page-heading"><div><p class="eyebrow">PUBLIC FORMS</p><h1>报名与会员申请</h1><p>官网表格提交后集中进入这里处理，也可以导出 CSV。</p></div><button class="primary-button" type="button">导出 CSV</button></div>
+        <div class="metric-grid compact"><article><span>新申请</span><strong>8</strong></article><article><span>已联系</span><strong>14</strong></article><article><span>已通过</span><strong>21</strong></article></div>
+        <section class="card table-card"><div class="table-head submissions"><span>申请</span><span>项目</span><span>状态</span><span>提交时间</span></div><div class="table-row submissions"><b>示范申请者 A<small>课程报名</small></b><span>深耕文学创作班</span><em class="new">新申请</em><time>今天 10:18</time></div><div class="table-row submissions"><b>示范申请者 B<small>课程报名</small></b><span>扎根文学鉴赏班</span><em class="contacted">已联系</em><time>今天 09:42</time></div><div class="table-row submissions"><b>示范申请者 C<small>会员申请</small></b><span>散文／小说</span><em class="new">新申请</em><time>昨天 20:15</time></div></section>
+      </section>
+
+      <section class="demo-panel" data-panel="facebook">
+        <div class="page-heading"><div><p class="eyebrow">AUTOMATION</p><h1>Facebook 自动同步</h1><p>取得官方专页新贴文，整理成官网格式，并保留 Facebook 原贴链接。</p></div><span class="sync-state">● 同步正常</span></div>
+        <div class="automation-flow"><article><span>01</span><h2>读取新贴文</h2><p>每 15 分钟检查作协官方专页。</p></article><i>→</i><article><span>02</span><h2>AI 整理</h2><p>整理标题、摘要和正文，不增加原贴没有的事实。</p></article><i>→</i><article><span>03</span><h2>更新官网</h2><p>自动发布并保存图片、日期和原贴链接。</p></article></div>
+        <section class="card sync-log"><div class="card-heading"><div><p class="eyebrow">SYNC LOG</p><h2>最近同步</h2></div></div><div class="log-row"><span class="success">成功</span><b>新增 1 则贴文</b><time>今天 10:15</time></div><div class="log-row"><span class="success">成功</span><b>没有新贴文</b><time>今天 10:00</time></div><div class="log-row"><span class="success">成功</span><b>没有新贴文</b><time>今天 09:45</time></div></section>
+      </section>
+
+      <section class="demo-panel" data-panel="security">
+        <div class="page-heading"><div><p class="eyebrow">ACCESS CONTROL</p><h1>账号与权限</h1><p>CMS 不开放公众注册，只允许获批准的协会工作人员进入。</p></div></div>
+        <div class="security-grid"><article><span>盾</span><h2>受邀请账号</h2><p>新账号必须由最高管理员创建或批准。</p></article><article><span>邮</span><h2>电邮验证</h2><p>使用者必须先确认工作电邮。</p></article><article><span>2</span><h2>双重验证</h2><p>登录后必须设置验证器 TOTP。</p></article><article><span>录</span><h2>操作记录</h2><p>保存发布、权限与处理状态变更。</p></article></div>
+      </section>
+    </main>
+  </div>
+  <script src="./cms-preview.js?v=20260917-1"></script>
+</body>
+</html>
