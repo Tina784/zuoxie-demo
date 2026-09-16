@@ -851,3 +851,66 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("Intersec
   window.setTimeout(scheduleTitleReveal, 180);
   window.setTimeout(scheduleTitleReveal, 520);
 }
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const motionCardSelector = [
+  ".editorial-card",
+  ".book-card",
+  ".course-leaf",
+  ".writer-index-row",
+  ".home-link-card",
+  ".about-panel",
+  ".council-panel",
+  ".contact-info-card",
+  ".contact-form-card",
+  ".launch-feature",
+  ".history-timeline article",
+  ".work-item",
+  ".profile-column-grid article"
+].join(",");
+const motionCards = [...new Set(document.querySelectorAll(motionCardSelector))];
+
+document.documentElement.classList.add("motion-ready");
+motionCards.forEach((card, index) => {
+  card.classList.add("motion-card", "motion-reveal");
+  card.style.setProperty("--motion-delay", `${Math.min(index % 6, 5) * 70}ms`);
+
+  if (index % 3 === 0 || card.matches(".book-card, .launch-feature")) {
+    card.classList.add("motion-float");
+    card.style.setProperty("--float-duration", `${7.4 + (index % 5) * .65}s`);
+    card.style.setProperty("--float-delay", `${-(index % 6) * .7}s`);
+    card.style.setProperty("--float-height", `${-4 - (index % 3)}px`);
+  }
+
+  if (!reducedMotion) {
+    const sheen = document.createElement("div");
+    sheen.className = "motion-sheen";
+    sheen.setAttribute("aria-hidden", "true");
+    card.appendChild(sheen);
+    card.addEventListener("pointermove", (event) => {
+      if (event.pointerType === "touch") return;
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--motion-x", `${event.clientX - rect.left}px`);
+      card.style.setProperty("--motion-y", `${event.clientY - rect.top}px`);
+    }, { passive: true });
+  }
+});
+
+const motionImages = document.querySelectorAll(".book-card img, .about-reference-photo img, .award-image img, .work-item img");
+motionImages.forEach((image, index) => {
+  image.classList.add("motion-image");
+  image.style.setProperty("--image-duration", `${8 + (index % 5) * .8}s`);
+});
+
+if (reducedMotion || !("IntersectionObserver" in window)) {
+  motionCards.forEach((card) => card.classList.add("motion-in"));
+} else {
+  const motionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("motion-in");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: .12, rootMargin: "0px 0px -5% 0px" });
+  motionCards.forEach((card) => motionObserver.observe(card));
+}

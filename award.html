@@ -1,46 +1,55 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>文学奖 | 马来西亚华文作家协会</title>
-  <meta name="description" content="马来西亚华文作家协会文学奖页面 demo。">
+  <title>文学奖资讯 | 马来西亚华文作家协会</title>
+  <meta name="description" content="整理与宣传马来西亚本地文学奖、征稿、入围和得奖资讯。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./site.css?v=20260805-8">
+  <link rel="stylesheet" href="./site.css?v=20260824-8">
 </head>
 <body class="award-page">
 <header class="site-header" id="top" data-site-header></header>
 
   <main class="simple-page">
     <section class="page-card">
-      <p class="eyebrow">Literary Award</p>
+      <div class="award-ribbon-field" aria-hidden="true">
+        <svg viewBox="0 0 1600 620" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="award-ribbon-gold" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8d6628" stop-opacity="0"/>
+              <stop offset=".18" stop-color="#c9983f"/>
+              <stop offset=".48" stop-color="#ffe5a3"/>
+              <stop offset=".72" stop-color="#c18c32"/>
+              <stop offset="1" stop-color="#8d6628" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path class="award-ribbon-line ribbon-one" d="M-120 430 C 190 80, 430 570, 760 270 S 1280 130, 1720 370"/>
+          <path class="award-ribbon-line ribbon-two" d="M-140 180 C 210 500, 480 20, 820 330 S 1320 520, 1740 180"/>
+          <path class="award-ribbon-line ribbon-three" d="M-80 535 C 290 230, 560 650, 930 310 S 1390 110, 1700 470"/>
+        </svg>
+      </div>
+      <p class="eyebrow">Literary Award Information</p>
       <div class="page-grid">
         <div>
-          <h1>海鸥青年文学奖</h1>
-          <p>旧网站资料显示，目前重点可先放上第 14 届海鸥青年文学奖。新版页面用暗色背景、金色灯影和颁奖典礼感来承载奖项，让文学奖看起来像协会的重要荣誉档案。</p>
-          <p>正式上线后，每一届可补上征稿办法、入围名单、得奖作品、评审名单、照片和作品阅读入口；没有资料的年份保持空白，不硬塞内容。</p>
+          <h1>文学奖资讯</h1>
+          <p>集中整理与宣传马来西亚本地文学奖、征稿、入围及得奖消息，让写作者更容易掌握可靠资讯。</p>
+          <p>目前先保存作协旧官网可核实的海鸥青年文学奖资料；其他本地文学奖将在主办方资料核实后陆续加入。</p>
         </div>
         <div class="award-image" role="img" aria-label="海鸥青年文学奖图片"></div>
       </div>
       <div class="award-years">
-        <div class="silk-timeline" aria-label="文学奖年份导航">
-          <span>2015</span>
-          <span>2018</span>
-          <span>2020</span>
-          <span>2022</span>
-          <span>2024</span>
-          <span>2026</span>
-        </div>
-        <div class="award-empty">2026 年资料待更新。后台未来可在这里加入奖项公告、报名表、评审结果和作品链接。</div>
+        <div class="silk-timeline" aria-label="文学奖资讯分类"><span>征稿</span><span>入围与结果</span><span>历史档案</span></div>
+        <a class="award-empty" href="https://zuoxie.wordpress.com/2015/10/23/%e7%ac%ac1%e5%b1%86%e6%b5%b7%e9%b7%97%e9%9d%92%e5%b9%b4%e6%96%87%e5%ad%b8%e7%8d%8e-%e7%b0%a1%e7%ab%a0/" target="_blank" rel="noopener">阅读旧官网《第1届海鸥青年文学奖——简章》 ↗</a>
       </div>
     </section>
   </main>
 <footer class="site-footer" data-site-footer></footer>
 
-  <script src="./site-shell.js?v=20260805-8"></script>
-  <script src="./site.js?v=20260805-8"></script>
+  <script src="./site-shell.js?v=20260824-3"></script>
+  <script src="./site.js?v=20260824-4"></script>
 </body>
 </html>
 

@@ -1,38 +1,56 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>活动动态 | 马来西亚华文作家协会</title>
   <meta name="description" content="马来西亚华文作家协会活动动态分类入口。">
+  <meta name="zuoxie-api-base" content="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./site.css?v=20260805-8">
+  <link rel="stylesheet" href="./site.css?v=20260824-8">
 </head>
 <body class="listing-page">
   <header class="site-header" id="top" data-site-header></header>
-  <main class="content-hub-page">
-    <section class="content-hub-shell editorial-section editorial-events">
-      <div class="editorial-cover">
-        <p class="eyebrow">Activity Updates</p>
-        <h1>活动动态</h1>
-        <p>这个页面预留给日后串接 Facebook API 自动更新新帖子。动态会像文学现场报纸一样，依栏目归档，保留活动脉络，也让读者一眼看见最新消息。</p>
+  <main class="launch-page archive-page">
+    <section class="launch-hero">
+      <p class="eyebrow">News &amp; Activities</p>
+      <h1>活动</h1>
+      <p>新官网负责发布经会长批准的最新内容；旧站资料则以原文链接保存，避免协会多年记录在网站迁移时断裂。</p>
+      <div class="launch-actions"><a class="button gold" href="#facebook-latest">查看自动更新动态</a><a class="button museum-outline" href="#archive">浏览历史消息</a></div>
+    </section>
+
+    <section class="news-archive facebook-latest" id="facebook-latest" data-facebook-feed>
+      <div class="launch-section-heading"><p class="eyebrow">Facebook Sync</p><h2>Facebook 最新动态</h2><p>官网会定时同步作协官方专页的新贴文，并保留原贴链接。</p></div>
+      <div class="facebook-feed-grid" data-facebook-feed-list><p class="feed-status">正在读取最新贴文……</p></div>
+      <a class="archive-more" href="https://www.facebook.com/mychinesewriters" target="_blank" rel="noopener">前往 Facebook 官方专页 →</a>
+    </section>
+
+    <section class="launch-feature-grid" aria-label="长期活动项目">
+      <a class="launch-feature" href="event-landscape.html"><span>地方书写</span><h2>爱我山河·文学写生</h2><p>走进地方现场，以观察、历史与文化记忆展开写作。</p><em>认识活动 →</em></a>
+      <a class="launch-feature" href="event-tea.html"><span>作家交流</span><h2>与作家的下午茶</h2><p>让作家、作品与读者在轻松而深入的对谈中相遇。</p><em>认识活动 →</em></a>
+      <a class="launch-feature" href="course.html"><span>文学教育</span><h2>课程与学习</h2><p>创作与鉴赏并行，持续培育写作者、读者与教师。</p><em>查看课程 →</em></a>
+    </section>
+
+    <section class="news-archive" id="archive">
+      <div class="launch-section-heading"><p class="eyebrow">Verified Archive</p><h2>旧站精选记录</h2><p>以下标题、日期与原文链接整理自作协 WordPress 旧官网。</p></div>
+      <div class="archive-news-list">
+        <a href="https://zuoxie.wordpress.com/2022/01/15/fushizhidipublish/" target="_blank" rel="noopener"><time datetime="2022-01-15">15 JAN 2022</time><h3>《复始之地·马华文学系列·乡土篇》订购消息</h3><span>出版消息 ↗</span></a>
+        <a href="https://zuoxie.wordpress.com/2020/12/31/2020%e5%b9%b4%e9%a9%ac%e6%9d%a5%e8%a5%bf%e4%ba%9a%e5%8d%8e%e6%96%87%e4%bd%9c%e5%ae%b6%e5%8d%8f%e4%bc%9a%e5%b7%a5%e4%bd%9c%e6%80%bb%e7%bb%93/" target="_blank" rel="noopener"><time datetime="2020-12-31">31 DEC 2020</time><h3>2020年马来西亚华文作家协会工作总结</h3><span>协会记录 ↗</span></a>
+        <a href="https://zuoxie.wordpress.com/2020/12/22/%e5%bc%80%e5%a7%8b%e6%8a%a5%e5%90%8d%e9%a9%ac%e5%8d%8e%e6%96%87%e5%ad%a6%e4%bd%9c%e5%93%81%e9%89%b4%e8%b5%8f%e7%8f%ad-3-0/" target="_blank" rel="noopener"><time datetime="2020-12-22">22 DEC 2020</time><h3>马华文学作品鉴赏班 3.0</h3><span>课程记录 ↗</span></a>
+        <a href="https://zuoxie.wordpress.com/2020/09/05/%e7%a2%a7%e6%be%84%e7%9f%ad%e7%af%87%e5%b0%8f%e8%af%b4%e8%87%aa%e9%80%89%e9%9b%86%e3%80%8a%e8%bf%87%e5%b0%bd%e6%b5%81%e6%b3%a2%e3%80%8b%e6%8e%a8%e4%bb%8b/" target="_blank" rel="noopener"><time datetime="2020-09-05">05 SEP 2020</time><h3>碧澄短篇小说自选集《过尽流波》推介</h3><span>新书推介 ↗</span></a>
+        <a href="https://zuoxie.wordpress.com/2020/09/05/%e3%80%8a%e5%8d%8e%e6%96%87%e6%95%99%e7%a7%91%e4%b9%a6%e4%b8%8a%e7%9a%84%e9%a9%ac%e5%8d%8e%e6%96%87%e5%ad%a6%ef%bc%88%e5%9b%bd%e4%b8%ad%e7%af%87%ef%bc%89%e3%80%8b%e6%96%b0%e4%b9%a6%e9%a2%84%e8%b4%ad/" target="_blank" rel="noopener"><time datetime="2020-09-05">05 SEP 2020</time><h3>《华文教科书上的马华文学（国中篇）》新书预购</h3><span>出版消息 ↗</span></a>
+        <a href="https://zuoxie.wordpress.com/2015/10/24/%e6%b7%b1%e8%80%95%e6%96%87%e5%ad%a6%e5%88%9b%e4%bd%9c%e8%af%be%e7%a8%8b/" target="_blank" rel="noopener"><time datetime="2015-10-24">24 OCT 2015</time><h3>深耕文学创作课程</h3><span>课程起点 ↗</span></a>
       </div>
-      <div class="editorial-board six-board">
-        <a id="activity" class="editorial-card is-feature" href="https://www.facebook.com/mychinesewriters" target="_blank" rel="noopener"><em>01</em><span>活动</span><b>讲座、分享会、文学聚会与协会公开活动</b><small>Activity dispatch</small></a>
-        <a id="course" class="editorial-card" href="course.html" target="_blank" rel="noopener"><em>02</em><span>课程</span><b>深耕文学创作班、扎根文学鉴赏班及相关课程消息</b><small>Course notes</small></a>
-        <a id="articles" class="editorial-card" href="writer-columns.html" target="_blank" rel="noopener"><em>03</em><span>文章发表</span><b>作协理事、会员与青年作家的文章发表入口</b><small>Published words</small></a>
-        <a id="visits" class="editorial-card" href="https://www.facebook.com/mychinesewriters" target="_blank" rel="noopener"><em>04</em><span>拜访交流</span><b>记录协会访问、文学交流、跨团体合作和友会往来</b><small>Exchange log</small></a>
-        <a class="editorial-card special" href="event-tea.html" target="_blank" rel="noopener"><em>05</em><span>与作家的下午茶</span><b>以轻松而深入的对谈连接作家、作品与读者</b><small>Tea salon</small></a>
-        <a class="editorial-card special" href="event-landscape.html" target="_blank" rel="noopener"><em>06</em><span>我爱山河文学写生</span><b>走入地方现场，把文化地景转化为可长期阅读的文字档案</b><small>Field writing</small></a>
-      </div>
+      <a class="archive-more" href="https://zuoxie.wordpress.com/" target="_blank" rel="noopener">前往种字网浏览完整历史档案 →</a>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
 
-  <script src="./site-shell.js?v=20260805-8"></script>
-  <script src="./site.js?v=20260805-8"></script>
+  <script src="./site-shell.js?v=20260917-1"></script>
+  <script src="./site-api.js?v=20260917-1"></script>
+  <script src="./site.js?v=20260824-4"></script>
 </body>
 </html>
 
