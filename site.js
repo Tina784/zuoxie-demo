@@ -1,5 +1,5 @@
 ﻿const homeHero = document.querySelector(".home-hero");
-const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
+const navLinks = document.querySelectorAll(".main-nav > a, .main-nav > .nav-group > a");
 const sections = [...document.querySelectorAll("main section[id]")];
 const huaCubeField = document.querySelector(".hua-cube-field");
 const huaGlyph = document.querySelector(".hua-glyph");
@@ -373,13 +373,45 @@ if (countTargets.length) {
   countTargets.forEach((item) => countObserver.observe(item));
 }
 
-if (sections.length) {
-  const navObserver = new IntersectionObserver((entries) => {
-    const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!active) return;
-    navLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
-  }, { rootMargin: "-38% 0px -52% 0px", threshold: [.1, .28, .5] });
-  sections.forEach((section) => navObserver.observe(section));
+const isHomePage = ["", "index.html"].includes(location.pathname.split("/").pop() || "");
+if (sections.length && isHomePage) {
+  const sectionNavHref = {
+    about: "about.html",
+    council: "about.html",
+    events: "events.html",
+    course: "course.html",
+    writers: "writer-columns.html",
+    award: "award.html",
+    support: "support.html",
+    bookshop: "bookshop.html",
+    contact: "contact.html",
+    zhongzi: "https://zuoxie.wordpress.com/"
+  };
+  let activeNavHref = "";
+  let scrollSpyFrame = 0;
+
+  const updateScrollNavigation = () => {
+    scrollSpyFrame = 0;
+    const marker = Math.min(window.innerHeight * .42, 420);
+    const activeSection = sections.find((section) => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= marker && rect.bottom > marker;
+    });
+    const nextHref = activeSection ? sectionNavHref[activeSection.id] || "" : "";
+    if (nextHref === activeNavHref) return;
+    activeNavHref = nextHref;
+    navLinks.forEach((link) => link.classList.toggle("is-scroll-current", link.getAttribute("href") === activeNavHref));
+  };
+
+  const scheduleScrollNavigation = () => {
+    if (scrollSpyFrame) return;
+    scrollSpyFrame = window.requestAnimationFrame(updateScrollNavigation);
+  };
+
+  document.addEventListener("scroll", scheduleScrollNavigation, { passive: true });
+  window.addEventListener("resize", scheduleScrollNavigation, { passive: true });
+  window.addEventListener("hashchange", scheduleScrollNavigation);
+  window.requestAnimationFrame(updateScrollNavigation);
 }
 
 function bindSearch(inputSelector, itemSelector, key) {

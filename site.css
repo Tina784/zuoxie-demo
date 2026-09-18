@@ -5778,3 +5778,65 @@ main > section > * {
   .public-application-form { padding: 22px 18px; border-radius: 24px; }
   .public-application-form .button { width: 100%; }
 }
+
+/* Cascade-safe homepage contrast and scroll-position navigation fixes. */
+@media (min-width: 861px) {
+  .site-header {
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: clamp(30px, 2.8vw, 54px);
+    align-items: center;
+  }
+  .brand { padding-right: clamp(18px, 1.7vw, 30px); border-right: 1px solid rgba(216,176,106,.2); }
+  .main-nav { min-width: 0; justify-content: flex-start; gap: clamp(4px, .65vw, 12px); }
+}
+
+#support.home-support-section {
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(198,166,110,.22), transparent 31%),
+    radial-gradient(circle at 82% 78%, rgba(82,111,99,.13), transparent 34%),
+    linear-gradient(145deg, #16100d 0%, #312016 58%, #16100d 100%);
+}
+#support.home-support-section::before {
+  background: linear-gradient(180deg, rgba(22,16,13,0), rgba(22,16,13,.78) 56%, rgba(22,16,13,0));
+}
+#support .home-support-copy h2 { color: #fffaf1; text-shadow: 0 14px 42px rgba(0,0,0,.32); }
+#support .home-support-copy > p:not(.eyebrow) { color: rgba(255,250,241,.76); }
+#support .home-support-ledger span { color: rgba(255,250,241,.88); }
+#support .eyebrow,
+#support .home-support-ledger b { color: #d8b06a; }
+
+.main-nav a.is-scroll-current {
+  color: #fffaf1;
+  text-shadow: 0 0 18px rgba(216,176,106,.32);
+}
+.main-nav a.is-scroll-current::after {
+  left: 12%;
+  right: 12%;
+  bottom: 2px;
+  height: 2px;
+  opacity: 1;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, transparent 0%, #b88536 18%, #fff1c9 50%, #b88536 82%, transparent 100%);
+  background-size: 220% 100%;
+  box-shadow: 0 0 15px rgba(216,176,106,.72);
+  animation: navCurrentFlow 1.8s ease-in-out infinite;
+}
+@keyframes navCurrentFlow {
+  0% { background-position: 120% 0; transform: scaleX(.62); opacity: .58; }
+  48% { opacity: 1; }
+  100% { background-position: -120% 0; transform: scaleX(1); opacity: .88; }
+}
+
+@media (min-width: 861px) and (max-width: 1240px) {
+  .site-header { column-gap: 18px; }
+  .brand { padding-right: 14px; }
+  .brand span { font-size: 16px; }
+  .brand small { display: none; }
+  .main-nav { gap: 1px; }
+  .main-nav a { padding-inline: 6px; font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-nav a.is-scroll-current::after { animation: none; }
+}
