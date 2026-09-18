@@ -5840,3 +5840,18 @@ main > section > * {
 @media (prefers-reduced-motion: reduce) {
   .main-nav a.is-scroll-current::after { animation: none; }
 }
+
+/* Keep publication actions aligned and readable inside book cards. */
+.book-card .add-book {
+  align-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin-top: auto;
+  padding: 0 20px;
+  line-height: 1.2;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
