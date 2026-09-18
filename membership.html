@@ -9,21 +9,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./site.css?v=20260917-1">
+  <link rel="stylesheet" href="./site.css?v=20260918-1">
 </head>
 <body><header class="site-header" id="top" data-site-header></header>
 <main class="application-page membership-page"><section class="application-shell">
   <div class="application-intro"><p class="eyebrow">Membership Application</p><h1>注册会员</h1><p>欢迎华文写作者、文学工作者与长期参与文学活动者提出申请。填写此表只代表提交会员申请，正式会员资格须经协会审核确认。</p><div class="application-note"><b>准备资料</b><p>请简要说明主要创作文类、发表或出版经历，以及希望加入作协的原因。</p></div></div>
   <form class="public-application-form" data-public-form data-endpoint="/membership-applications">
+    <div class="application-form-head"><div><b>填写申请资料</b><small>约需 3–5 分钟</small></div><span><i>*</i> 必填项目</span></div>
     <div class="form-two"><label>姓名 *<input name="name" autocomplete="name" maxlength="120" required></label><label>笔名<input name="pen_name" maxlength="120"></label></div>
     <div class="form-two"><label>Email *<input name="email" type="email" autocomplete="email" maxlength="190" required></label><label>联系电话 *<input name="phone" type="tel" autocomplete="tel" maxlength="40" required></label></div>
     <label>居住城市／州属 *<input name="city" maxlength="120" required></label>
     <label>主要创作文类 *<input name="genres" maxlength="500" placeholder="例如：诗、散文、小说、评论" required></label>
-    <label>发表、出版或文学活动经历<textarea name="published_works" maxlength="3000" rows="6"></textarea></label>
-    <label>申请加入作协的原因 *<textarea name="reason" maxlength="2000" rows="6" required></textarea></label>
+    <label>发表、出版或文学活动经历<textarea name="published_works" maxlength="3000" rows="6"></textarea><small class="form-field-help"><span>没有也可以留空</span><span data-count-for="published_works"></span></small></label>
+    <label>申请加入作协的原因 *<textarea name="reason" maxlength="2000" rows="6" required></textarea><small class="form-field-help"><span>请简要说明加入原因</span><span data-count-for="reason"></span></small></label>
     <label class="honeypot" aria-hidden="true">网站<input name="website" tabindex="-1" autocomplete="off"></label>
     <label class="consent-check"><input name="consent" type="checkbox" value="1" required><span>我确认以上资料真实，并同意协会为审核会员申请及联络用途处理这些资料。我已阅读<a href="legal.html" target="_blank">隐私政策</a>。</span></label>
-    <button class="button dark" type="submit">提交会员申请</button><p class="form-status" data-form-status aria-live="polite"></p>
+    <button class="button dark" type="submit">提交会员申请</button><p class="form-status" data-form-status role="status" aria-live="polite"></p>
   </form>
 </section></main><footer class="site-footer" data-site-footer></footer>
-<script src="./site-shell.js?v=20260917-2"></script><script src="./site-api.js?v=20260917-1"></script><script src="./site.js?v=20260824-4"></script></body></html>
+<script src="./site-shell.js?v=20260918-1"></script><script src="./site-api.js?v=20260918-1"></script><script src="./site.js?v=20260918-1"></script></body></html>

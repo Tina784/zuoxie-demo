@@ -1,5 +1,8 @@
 const siteHeaderHost = document.querySelector("[data-site-header]");
 if (siteHeaderHost) {
+  if (!document.querySelector(".skip-link")) {
+    siteHeaderHost.insertAdjacentHTML("beforebegin", '<a class="skip-link" href="#main-content">跳到主要内容</a>');
+  }
   siteHeaderHost.innerHTML = `
     <a class="brand" href="index.html#home" aria-label="回到首页">
       <img src="images/zuoxie-logo-cutout.png" alt="马来西亚华文作家协会 logo">
@@ -32,8 +35,15 @@ if (siteHeaderHost) {
   if (currentPage === "contact.html") currentNavHref = "contact.html";
   if (currentPage === "zhongzi.html") currentNavHref = "zhongzi.html";
   const currentNavLink = currentNavHref ? siteHeaderHost.querySelector(`.main-nav a[href="${currentNavHref}"]`) : null;
-  if (currentNavLink) currentNavLink.classList.add("is-current");
+  if (currentNavLink) {
+    currentNavLink.classList.add("is-current");
+    currentNavLink.setAttribute("aria-current", "page");
+  }
 }
+
+const siteMain = document.querySelector("main");
+if (siteMain && !siteMain.id) siteMain.id = "main-content";
+if (siteMain && !siteMain.hasAttribute("tabindex")) siteMain.tabIndex = -1;
 
 const siteFooterHost = document.querySelector("[data-site-footer]");
 if (siteFooterHost) {

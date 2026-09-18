@@ -8,22 +8,27 @@ let huaAnimationTimer;
 
 const siteHeader = document.querySelector(".site-header");
 if (siteHeader) {
+  const mobileNav = siteHeader.querySelector(".main-nav");
+  if (mobileNav && !mobileNav.id) mobileNav.id = "mobile-site-navigation";
   const mobileNavToggle = document.createElement("button");
   mobileNavToggle.className = "mobile-nav-toggle";
   mobileNavToggle.type = "button";
   mobileNavToggle.setAttribute("aria-label", "打开导航菜单");
   mobileNavToggle.setAttribute("aria-expanded", "false");
+  mobileNavToggle.setAttribute("aria-controls", "mobile-site-navigation");
   mobileNavToggle.innerHTML = "<span></span><span></span><span></span>";
   siteHeader.querySelector(".brand")?.after(mobileNavToggle);
 
   const closeMobileNav = () => {
     siteHeader.classList.remove("is-menu-open");
+    document.body.classList.remove("mobile-menu-open");
     mobileNavToggle.setAttribute("aria-expanded", "false");
     mobileNavToggle.setAttribute("aria-label", "打开导航菜单");
   };
 
   mobileNavToggle.addEventListener("click", () => {
     const isOpen = siteHeader.classList.toggle("is-menu-open");
+    document.body.classList.toggle("mobile-menu-open", isOpen);
     mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
     mobileNavToggle.setAttribute("aria-label", isOpen ? "关闭导航菜单" : "打开导航菜单");
   });
@@ -33,7 +38,18 @@ if (siteHeader) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMobileNav();
+    if (event.key === "Escape" && siteHeader.classList.contains("is-menu-open")) {
+      closeMobileNav();
+      mobileNavToggle.focus();
+    }
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (siteHeader.classList.contains("is-menu-open") && !siteHeader.contains(event.target)) closeMobileNav();
+  });
+
+  window.matchMedia("(min-width: 861px)").addEventListener("change", (event) => {
+    if (event.matches) closeMobileNav();
   });
 }
 

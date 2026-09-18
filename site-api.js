@@ -14,15 +14,32 @@
     const programmeSelect = form.querySelector('[name="programme"]');
     if (programmeSelect && programme) programmeSelect.value = programme === "appreciation" ? "扎根文学鉴赏班" : "深耕文学创作班";
 
+    form.querySelectorAll("textarea[maxlength]").forEach((field) => {
+      const counter = form.querySelector(`[data-count-for="${field.name}"]`);
+      const updateCounter = () => {
+        if (counter) counter.textContent = `${field.value.length} / ${field.maxLength} 字`;
+      };
+      field.addEventListener("input", updateCounter);
+      updateCounter();
+    });
+
+    const announce = (message, type = "") => {
+      status.textContent = message;
+      status.className = `form-status${type ? ` ${type}` : ""}`;
+      status.tabIndex = -1;
+      status.focus({ preventScroll: true });
+      status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    };
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!apiBase) {
-        status.textContent = "报名后端尚待上线。请暂时电邮 mychinesewriters@gmail.com；网站上线时只需填入 CMS 地址即可启用此表格。";
-        status.className = "form-status is-error";
+        announce("报名后端尚待上线。请暂时电邮 mychinesewriters@gmail.com；网站上线时只需填入 CMS 地址即可启用此表格。", "is-error");
         return;
       }
 
       submit.disabled = true;
+      form.setAttribute("aria-busy", "true");
       status.textContent = "正在安全提交……";
       status.className = "form-status";
       const payload = Object.fromEntries(new FormData(form).entries());
@@ -38,13 +55,14 @@
         const result = await response.json();
         if (!response.ok) throw new Error(result.message || Object.values(result.errors || {})[0]?.[0] || "提交失败，请检查资料。 ");
         form.reset();
-        status.textContent = `${result.message} 参考编号：${result.reference}`;
-        status.className = "form-status is-success";
+        if (programmeSelect && programme) programmeSelect.value = programme === "appreciation" ? "扎根文学鉴赏班" : "深耕文学创作班";
+        form.querySelectorAll("textarea[maxlength]").forEach((field) => field.dispatchEvent(new Event("input")));
+        announce(`${result.message} 参考编号：${result.reference}`, "is-success");
       } catch (error) {
-        status.textContent = error.message || "暂时无法提交，请稍后再试。";
-        status.className = "form-status is-error";
+        announce(error.message || "暂时无法提交，请稍后再试。", "is-error");
       } finally {
         submit.disabled = false;
+        form.removeAttribute("aria-busy");
       }
     });
   });
